@@ -10,4 +10,7 @@
 
 @interface HSPanelistCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UILabel *labName;
+@property (nonatomic, weak) IBOutlet UIImageView *imgPicture;
+
 @end

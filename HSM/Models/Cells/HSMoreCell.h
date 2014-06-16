@@ -10,4 +10,7 @@
 
 @interface HSMoreCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UIImageView *imgIcon;
+@property (nonatomic, weak) IBOutlet UILabel *labTitle;
+
 @end

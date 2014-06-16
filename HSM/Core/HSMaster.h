@@ -10,6 +10,7 @@
 #import "HSRestClient.h"
 #import "HSTools.h"
 #import "HSAdManager.h"
+#import "HSEventManager.h"
 
 @interface HSMaster : NSObject
 
@@ -19,6 +20,7 @@
 + (HSRestClient *) rest;
 + (HSTools *) tools;
 + (HSAdManager *) ads;
++ (HSEventManager *) events;
 
 // Properties
 @property (nonatomic, strong) NSDateFormatter *stringConverter;

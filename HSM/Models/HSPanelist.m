@@ -10,4 +10,9 @@
 
 @implementation HSPanelist
 
+@synthesize uniqueId;
+@synthesize name, slug;
+@synthesize description;
+@synthesize lectureTitle, lectureDescription;
+
 @end

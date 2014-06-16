@@ -10,4 +10,10 @@
 
 @interface HSAgendaCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UILabel *labTitle;
+@property (nonatomic, weak) IBOutlet UILabel *labSubtitle;
+@property (nonatomic, weak) IBOutlet UILabel *labHourStart;
+@property (nonatomic, weak) IBOutlet UILabel *labHourEnd;
+@property (nonatomic, weak) IBOutlet UIImageView *imgPicture;
+
 @end

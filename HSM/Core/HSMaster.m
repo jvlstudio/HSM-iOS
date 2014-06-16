@@ -65,5 +65,14 @@
 		return ad;
 	}
 }
++ (HSEventManager *) events {
+	static HSEventManager* events;
+	@synchronized(self){
+		if(!events){
+			events = [HSEventManager new];
+		}
+		return events;
+	}
+}
 
 @end

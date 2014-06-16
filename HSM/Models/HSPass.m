@@ -10,4 +10,8 @@
 
 @implementation HSPass
 
+@synthesize color;
+@synthesize name, description;
+@synthesize value, valuePromo;
+
 @end

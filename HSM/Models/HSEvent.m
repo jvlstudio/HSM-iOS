@@ -10,4 +10,10 @@
 
 @implementation HSEvent
 
+@synthesize uniqueId;
+@synthesize name;
+@synthesize shortDescription, largeDescription;
+@synthesize local;
+@synthesize dates;
+
 @end

@@ -19,6 +19,11 @@
 #define HS_APP_NAME                  @"HSM"
 #define HS_APP_RESOURCES             @"Resources"
 
+// property list
+
+#define HS_PLIST_EVENTS             @"HS-Events"
+#define HS_PLIST_ADS                @"HS-Ads"
+
 // third-part app ids
 
 #define HS_PUBLIC_TOKEN				@"4fc5c9fda3dc404c65c9f6167a3da62c"

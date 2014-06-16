@@ -10,4 +10,6 @@
 
 @implementation HSAd
 
+@synthesize uniqueId, image, link;
+
 @end

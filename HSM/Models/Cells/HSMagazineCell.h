@@ -10,4 +10,8 @@
 
 @interface HSMagazineCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UIImageView *imgPicture;
+@property (nonatomic, weak) IBOutlet UILabel *labTitle;
+@property (nonatomic, weak) IBOutlet UILabel *labSubtitle;
+
 @end

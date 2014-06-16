@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3406B9194F995300347815 /* HS-Ads.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A3406B8194F995300347815 /* HS-Ads.plist */; };
+		4A3406BB194F995B00347815 /* HS-Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A3406BA194F995B00347815 /* HS-Events.plist */; };
+		4A3406BF194F9AD000347815 /* HSLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3406BE194F9AD000347815 /* HSLecture.m */; };
+		4A3406C3194F9E6400347815 /* HSEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3406C2194F9E6400347815 /* HSEventManager.m */; };
 		4AB13671194F83C300CD60AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB13670194F83C300CD60AD /* Foundation.framework */; };
 		4AB13673194F83C300CD60AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB13672194F83C300CD60AD /* CoreGraphics.framework */; };
 		4AB13675194F83C300CD60AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB13674194F83C300CD60AD /* UIKit.framework */; };
@@ -15,7 +19,6 @@
 		4AB13692194F83C300CD60AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB13674194F83C300CD60AD /* UIKit.framework */; };
 		4AB136B2194F845100CD60AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AB136A6194F845100CD60AD /* Images.xcassets */; };
 		4AB136B3194F845100CD60AD /* HSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB136AA194F845100CD60AD /* HSAppDelegate.m */; };
-		4AB136B4194F845100CD60AD /* HSM-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AB136AC194F845100CD60AD /* HSM-Info.plist */; };
 		4AB136B5194F845100CD60AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB136AE194F845100CD60AD /* main.m */; };
 		4AB136B6194F845100CD60AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AB136B1194F845100CD60AD /* Main.storyboard */; };
 		4AB136BD194F849200CD60AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AB136BB194F849200CD60AD /* InfoPlist.strings */; };
@@ -37,7 +40,6 @@
 		4AB13706194F852100CD60AD /* HSRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB13705194F852100CD60AD /* HSRestClient.m */; };
 		4AB13709194F852A00CD60AD /* HSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB13708194F852A00CD60AD /* HSTools.m */; };
 		4AB13710194F855D00CD60AD /* HSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB1370F194F855D00CD60AD /* HSEvent.m */; };
-		4AB13713194F856500CD60AD /* HSAgenda.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB13712194F856500CD60AD /* HSAgenda.m */; };
 		4AB13716194F856D00CD60AD /* HSPanelist.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB13715194F856D00CD60AD /* HSPanelist.m */; };
 		4AB13719194F857500CD60AD /* HSPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB13718194F857500CD60AD /* HSPass.m */; };
 		4AB13722194F85BF00CD60AD /* HSPassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB13721194F85BF00CD60AD /* HSPassesViewController.m */; };
@@ -82,6 +84,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A3406B8194F995300347815 /* HS-Ads.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Ads.plist"; sourceTree = "<group>"; };
+		4A3406BA194F995B00347815 /* HS-Events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Events.plist"; sourceTree = "<group>"; };
+		4A3406BD194F9AD000347815 /* HSLecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLecture.h; sourceTree = "<group>"; };
+		4A3406BE194F9AD000347815 /* HSLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLecture.m; sourceTree = "<group>"; };
+		4A3406C1194F9E6400347815 /* HSEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSEventManager.h; sourceTree = "<group>"; };
+		4A3406C2194F9E6400347815 /* HSEventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSEventManager.m; sourceTree = "<group>"; };
 		4AB1366D194F83C300CD60AD /* HSM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB13670194F83C300CD60AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4AB13672194F83C300CD60AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -143,8 +151,6 @@
 		4AB13708194F852A00CD60AD /* HSTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTools.m; sourceTree = "<group>"; };
 		4AB1370E194F855D00CD60AD /* HSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSEvent.h; sourceTree = "<group>"; };
 		4AB1370F194F855D00CD60AD /* HSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSEvent.m; sourceTree = "<group>"; };
-		4AB13711194F856500CD60AD /* HSAgenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAgenda.h; sourceTree = "<group>"; };
-		4AB13712194F856500CD60AD /* HSAgenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAgenda.m; sourceTree = "<group>"; };
 		4AB13714194F856D00CD60AD /* HSPanelist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPanelist.h; sourceTree = "<group>"; };
 		4AB13715194F856D00CD60AD /* HSPanelist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPanelist.m; sourceTree = "<group>"; };
 		4AB13717194F857500CD60AD /* HSPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPass.h; sourceTree = "<group>"; };
@@ -234,6 +240,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A3406B7194F993800347815 /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				4A3406B8194F995300347815 /* HS-Ads.plist */,
+				4A3406BA194F995B00347815 /* HS-Events.plist */,
+			);
+			path = plists;
+			sourceTree = "<group>";
+		};
+		4A3406BC194F9AA600347815 /* Lecture */ = {
+			isa = PBXGroup;
+			children = (
+				4A3406BD194F9AD000347815 /* HSLecture.h */,
+				4A3406BE194F9AD000347815 /* HSLecture.m */,
+			);
+			name = Lecture;
+			sourceTree = "<group>";
+		};
+		4A3406C0194F9E4F00347815 /* Event Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4A3406C1194F9E6400347815 /* HSEventManager.h */,
+				4A3406C2194F9E6400347815 /* HSEventManager.m */,
+			);
+			name = "Event Manager";
+			sourceTree = "<group>";
+		};
 		4AB13664194F83C300CD60AD = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +320,7 @@
 		4AB136A5194F845100CD60AD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4A3406B7194F993800347815 /* plists */,
 				4AB136A6194F845100CD60AD /* Images.xcassets */,
 			);
 			path = Assets;
@@ -312,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				4AB13779194F91BD00CD60AD /* Ad Manager */,
+				4A3406C0194F9E4F00347815 /* Event Manager */,
 				4AB136B8194F847400CD60AD /* Analytics */,
 				4AB136B7194F847000CD60AD /* Rest */,
 				4AB136B9194F847A00CD60AD /* Tools */,
@@ -337,7 +372,7 @@
 			children = (
 				4AB13775194F91AE00CD60AD /* Ad */,
 				4AB1370A194F853100CD60AD /* Event */,
-				4AB1370C194F854300CD60AD /* Agenda */,
+				4A3406BC194F9AA600347815 /* Lecture */,
 				4AB1370B194F853B00CD60AD /* Panelist */,
 				4AB1370D194F854800CD60AD /* Pass */,
 				4AB1374F194F87B200CD60AD /* Book */,
@@ -489,15 +524,6 @@
 				4AB13715194F856D00CD60AD /* HSPanelist.m */,
 			);
 			name = Panelist;
-			sourceTree = "<group>";
-		};
-		4AB1370C194F854300CD60AD /* Agenda */ = {
-			isa = PBXGroup;
-			children = (
-				4AB13711194F856500CD60AD /* HSAgenda.h */,
-				4AB13712194F856500CD60AD /* HSAgenda.m */,
-			);
-			name = Agenda;
 			sourceTree = "<group>";
 		};
 		4AB1370D194F854800CD60AD /* Pass */ = {
@@ -774,6 +800,7 @@
 				4AB13669194F83C300CD60AD /* Sources */,
 				4AB1366A194F83C300CD60AD /* Frameworks */,
 				4AB1366B194F83C300CD60AD /* Resources */,
+				4A3406B6194F990800347815 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -844,6 +871,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A3406B9194F995300347815 /* HS-Ads.plist in Resources */,
 				4AB136B6194F845100CD60AD /* Main.storyboard in Resources */,
 				4AB13765194F893900CD60AD /* Resources.xib in Resources */,
 				4AB1374C194F874600CD60AD /* Pass.storyboard in Resources */,
@@ -851,7 +879,7 @@
 				4AB136B2194F845100CD60AD /* Images.xcassets in Resources */,
 				4AB136F3194F84B700CD60AD /* Readme.txt in Resources */,
 				4AB1374E194F875400CD60AD /* Panelists.storyboard in Resources */,
-				4AB136B4194F845100CD60AD /* HSM-Info.plist in Resources */,
+				4A3406BB194F995B00347815 /* HS-Events.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +892,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4A3406B6194F990800347815 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "./Crashlytics.framework/run 48118b9b5992c16c30f272709e02fe01c05ee2d5 584c515000e8a2237bf7cbbf74a124dd52588221f7d75526b5487810ad40d03a";
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4AB13669194F83C300CD60AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -872,13 +916,13 @@
 				4AB13785194F940C00CD60AD /* HSMagazineCell.m in Sources */,
 				4AB13774194F916D00CD60AD /* HSMoreViewController.m in Sources */,
 				4AB13763194F882800CD60AD /* HSBookCell.m in Sources */,
-				4AB13713194F856500CD60AD /* HSAgenda.m in Sources */,
 				4AB13788194F941700CD60AD /* HSMoreCell.m in Sources */,
 				4AB13736194F865A00CD60AD /* HSPassFormViewController.m in Sources */,
 				4AB136B5194F845100CD60AD /* main.m in Sources */,
 				4AB136FA194F84B700CD60AD /* SDWebImagePrefetcher.m in Sources */,
 				4AB13722194F85BF00CD60AD /* HSPassesViewController.m in Sources */,
 				4AB13757194F87EF00CD60AD /* HSEventCell.m in Sources */,
+				4A3406C3194F9E6400347815 /* HSEventManager.m in Sources */,
 				4AB136FC194F84B700CD60AD /* UIImageView+WebCache.m in Sources */,
 				4AB1376C194F914500CD60AD /* HSNetworkViewController.m in Sources */,
 				4AB1372E194F861200CD60AD /* HSPanelistsViewController.m in Sources */,
@@ -891,6 +935,7 @@
 				4AB1375B194F880100CD60AD /* HSAgendaCell.m in Sources */,
 				4AB1373E194F86A000CD60AD /* HSEventSingleViewController.m in Sources */,
 				4AB13706194F852100CD60AD /* HSRestClient.m in Sources */,
+				4A3406BF194F9AD000347815 /* HSLecture.m in Sources */,
 				4AB1372B194F85E800CD60AD /* HSAgendaViewController.m in Sources */,
 				4AB13725194F85C900CD60AD /* HSHomeViewController.m in Sources */,
 				4AB13703194F851900CD60AD /* HSAnalytics.m in Sources */,
@@ -1026,7 +1071,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HSM/HSM-Prefix.pch";
+				GCC_PREFIX_HEADER = "HSM/Core/Supported Files/HSM-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HSM/Core/Supported Files/HSM-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1049,7 +1094,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HSM/HSM-Prefix.pch";
+				GCC_PREFIX_HEADER = "HSM/Core/Supported Files/HSM-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HSM/Core/Supported Files/HSM-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1144,7 +1189,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HSM/HSM-Prefix.pch";
+				GCC_PREFIX_HEADER = "HSM/Core/Supported Files/HSM-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HSM/Core/Supported Files/HSM-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

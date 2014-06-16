@@ -22,7 +22,7 @@
 		[GAI sharedInstance].dispatchInterval = 20;
 		[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelError];
 		// Initialize tracker.
-		id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:HS_GOOGLEANALYTICS_KEY];
+		id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:HS_GAI_TRACKER];
 		[tracker send:[[[GAIDictionaryBuilder createEventWithCategory:@"UX" action:@"appstart" label:nil value:nil] set:@"start" forKey:kGAISessionControl] build]];
 		declared = YES;
 	}

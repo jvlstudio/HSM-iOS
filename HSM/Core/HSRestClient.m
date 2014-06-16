@@ -20,19 +20,36 @@
 
 #pragma mark - Methods
 
-// sign an user up
-- (void) userSignUp:(CHUser*) user completion:(void(^)(BOOL succeed, NSDictionary *result))block
+// events..
+- (void) events:(void(^)(BOOL succeed, NSDictionary *result))block
 {
-    NSString *stringURL = [NSString stringWithFormat:@"%@/users", CH_REST_SOURCE];
-    NSDictionary *params= @{@"user_name"    : user.userName,
-                            @"user_email"   : user.userEmail,
-                            @"user_birthday": @"20/06/1987",//user.userBirthday,
-                            @"user_phone"   : user.userPhone,
-                            @"user_gender"  : @"M",//user.userGender,
-                            @"user_password": user.userPassword };
+    NSString *stringURL = [NSString stringWithFormat:@"%@/events.php", HS_REST_SOURCE];
     // request..
     NSURL *url = [NSURL URLWithString:stringURL];
-    [self sendRequestToURL:url method:kHTTPMethodPUT parameters:params completion:block];
+    [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
+}
+
+// ads..
+- (void) ads:(void(^)(BOOL succeed, NSDictionary *result))block
+{
+    NSString *stringURL = [NSString stringWithFormat:@"%@/ads.php", HS_REST_SOURCE];
+    // request..
+    NSURL *url = [NSURL URLWithString:stringURL];
+    [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
+}
+- (void) adClicked:(NSString *) adId completion:(void(^)(BOOL succeed, NSDictionary *result))block
+{
+    NSString *stringURL = [NSString stringWithFormat:@"%@/ads-link.php?id=%@", HS_REST_SOURCE, adId];
+    // request..
+    NSURL *url = [NSURL URLWithString:stringURL];
+    [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
+}
+- (void) adViewed:(NSString *) adId completion:(void(^)(BOOL succeed, NSDictionary *result))block
+{
+    NSString *stringURL = [NSString stringWithFormat:@"%@/ads-view.php?id=%@", HS_REST_SOURCE, adId];
+    // request..
+    NSURL *url = [NSURL URLWithString:stringURL];
+    [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
 }
 
 #pragma mark - Private Methods
@@ -40,13 +57,8 @@
 - (void) sendRequestToURL:(NSURL*) url method:(HTTPMethod) method parameters:(NSDictionary*) parameters completion:(void(^)(BOOL succeed, NSDictionary *result))block
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:120.0];
-    
-    [request setValue:CH_REST_ACCESS_TOKEN forHTTPHeaderField:CH_DEF_HTTP_TOKEN];
-    [request setHTTPMethod:[CH_HTTP_METHODS objectAtIndex:method]];
-    if([[CHMaster user] isSigned])
-        [request setValue:[[CHMaster user] userAccessToken] forHTTPHeaderField:CH_DEF_MX_TOKEN];
-    
-	NSLog(@"[CH_REST] > request url: %@", url.relativeString);
+    [request setHTTPMethod:[HS_HTTP_METHODS objectAtIndex:method]];
+	NSLog(@"[HS_REST] > request url: %@", url.relativeString);
 	
     // parameters..
     if (parameters != nil) {
@@ -54,15 +66,15 @@
         for (NSString *value in parameters) {
             urlParameters = [urlParameters stringByAppendingString:[NSString stringWithFormat:@"&%@=%@", value ,value]];
         }
-		NSLog(@"[CH_REST] > request parameters: %@", urlParameters);
+		NSLog(@"[HS_REST] > request parameters: %@", urlParameters);
         [request setHTTPBody:[urlParameters dataUsingEncoding:NSUTF8StringEncoding]];
     }
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         // error..
         if (connectionError) {
-            NSLog(@"[CH_REST] conection error: %@", connectionError.description);
-            [[CHMaster tools] dialogWithMessage:@"Não foi possível conectar-se à internet." title:@"Falha de conexão"];
+            NSLog(@"[HS_REST] conection error: %@", connectionError.description);
+            [[HSMaster tools] dialogWithMessage:@"Não foi possível conectar-se à internet." title:@"Falha de conexão"];
             return;
         }
         // received data..
@@ -74,7 +86,7 @@
 								  error: &e];
             int wasSucceed = [[JSON objectForKey:@"succees"] intValue];
             if (wasSucceed > 0) {
-                NSLog(@"[CH_REST] succeed!");
+                NSLog(@"[HS_REST] succeed!");
                 block(YES, JSON);
             }
             else {
@@ -86,7 +98,7 @@
             }
         }
         else {
-            NSLog(@"[CH_REST] didn't receive data");
+            NSLog(@"[HS_REST] didn't receive data");
         }
     }];
 }

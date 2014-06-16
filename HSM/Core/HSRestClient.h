@@ -6,9 +6,11 @@
 //  Copyright (c) 2014 ikomm Digital Solutions. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #pragma mark - Typedef
 
-#define CH_HTTP_METHODS @[@"GET", @"POST", @"PUT", @"PATCH"]
+#define HS_HTTP_METHODS @[@"GET", @"POST", @"PUT", @"PATCH"]
 
 typedef enum HTTPMethod : NSInteger
 {
@@ -23,6 +25,10 @@ HTTPMethod;
 
 @interface HSRestClient : NSObject
 
-- (void) userSignIn:(NSString*) login password:(NSString*) password completion:(void(^)(BOOL succeed, NSDictionary *result))block;
+- (void) events:(void(^)(BOOL succeed, NSDictionary *result))block;
+
+- (void) ads:(void(^)(BOOL succeed, NSDictionary *result))block;
+- (void) adClicked:(NSString *) adId completion:(void(^)(BOOL succeed, NSDictionary *result))block;
+- (void) adViewed:(NSString *) adId completion:(void(^)(BOOL succeed, NSDictionary *result))block;
 
 @end

@@ -10,4 +10,10 @@
 
 @implementation HSBook
 
+@synthesize uniqueId;
+@synthesize title, subtitle;
+@synthesize description;
+@synthesize authorName, authorDescription;
+@synthesize price, link;
+
 @end

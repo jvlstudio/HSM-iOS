@@ -10,4 +10,8 @@
 
 @interface HSNetworkCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UILabel *labName;
+@property (nonatomic, weak) IBOutlet UILabel *labeDescription;
+@property (nonatomic, weak) IBOutlet UIImageView *imgColor;
+
 @end
