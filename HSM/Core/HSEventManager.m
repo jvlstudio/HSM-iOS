@@ -19,7 +19,22 @@
 - (NSArray *) events
 {
     NSArray *events = [[HSMaster tools] propertyListRead:HS_PLIST_EVENTS];
-    return events;
+    NSMutableArray *eventObjects = [NSMutableArray array];
+    for (NSDictionary *eventDict in events)
+    {
+        // event
+        HSEvent *event = [HSEvent new];
+        event.uniqueId = [eventDict objectForKey:@"id"];
+        event.name = [eventDict objectForKey:@"name"];
+        event.shortDescription = [eventDict objectForKey:@"tiny_description"];
+        event.largeDescription = [eventDict objectForKey:@"description"];
+        event.local = [eventDict objectForKey:@"local"];
+        event.dates = [eventDict objectForKey:@"dates"];
+        
+        [eventObjects addObject:event];
+    }
+    
+    return eventObjects;
 }
 - (HSEvent *) eventForId:(NSString *) eventId
 {

@@ -20,7 +20,23 @@
 
 #pragma mark -
 #pragma mark Application Start
-- (void) buildApplication {
+- (void) buildApplication
+{    
+    // set tint color
+    UIColor *goldColor = [UIColor colorWithRed:243.0/255.0 green:214.0/255.0 blue:30.0/255.0 alpha:1.0];
+    UITabBarController *tabBar = (UITabBarController*)[window rootViewController];
+    [[tabBar tabBar] setTintColor:goldColor];
+    // nav bar
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    // set font
+    NSShadow* shadow = [NSShadow new];
+    shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    shadow.shadowColor = [UIColor blackColor];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: goldColor,
+                                                            NSFontAttributeName: [UIFont fontWithName:FONT_REGULAR size:21.0f],
+                                                            NSShadowAttributeName: shadow
+                                                            }];
 }
 
 #pragma mark - AppDelegate Methods
@@ -43,6 +59,8 @@
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     [application cancelAllLocalNotifications];
     application.applicationIconBadgeNumber = 0;
+    
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
 	
 	// Build application launch
     [self buildApplication];

@@ -17,7 +17,7 @@
     [[HSMaster rest] adClicked:advertising.uniqueId completion:^(BOOL succeed, NSDictionary *result) {
         if (succeed) {
             if (result != nil) {
-                
+                // send request only
             }
         }
         else {
@@ -30,7 +30,7 @@
     [[HSMaster rest] adViewed:advertising.uniqueId completion:^(BOOL succeed, NSDictionary *result) {
         if (succeed) {
             if (result != nil) {
-                
+                // send request only
             }
         }
         else {

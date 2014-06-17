@@ -45,5 +45,15 @@
 			</array>
 		</dict>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>RobotoBold.ttf</string>
+		<string>RobotoRegular.ttf</string>
+		<string>CaeciliaLTStd-Regular.otf</string>
+		<string>CaeciliaLTStd-Light.otf</string>
+		<string>CaeciliaLTStd-Roman.otf</string>
+	</array>
 </dict>
 </plist>

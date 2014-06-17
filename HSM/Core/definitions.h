@@ -41,4 +41,9 @@
 #define IPHONE5_OFFSET              88
 #define IPHONE5_COEF                IS_IPHONE5 ? ZERO : IPHONE5_OFFSET
 
+#define FONT_FAMILY                 @"CaeciliaLTStd"
+#define FONT_REGULAR                @"CaeciliaLTStd-Roman"
+#define FONT_LIGHT                  @"CaeciliaLTStd-Light"
+#define FONT_BOLD                   @"CaeciliaLTStd-Bold"
+
 #endif
