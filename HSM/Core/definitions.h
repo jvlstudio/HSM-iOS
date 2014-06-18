@@ -10,22 +10,18 @@
 #define HSM_definitions_h
 
 // urls
-
 #define	HS_URL						@"apps.ikomm.com.br/hsm5"
 #define HS_REST_SOURCE				@"http://apps.ikomm.com.br/hsm5/rest"
 
 // resources
-
 #define HS_APP_NAME                  @"HSM"
 #define HS_APP_RESOURCES             @"Resources"
 
 // property list
-
 #define HS_PLIST_EVENTS             @"HS-Events"
 #define HS_PLIST_ADS                @"HS-Ads"
 
 // third-part app ids
-
 #define HS_PUBLIC_TOKEN				@"4fc5c9fda3dc404c65c9f6167a3da62c"
 #define HS_FACEBOOK_ID              @"139301386281076"
 #define HS_FACEBOOK_SECRET          @"9ceee311105aa8af80062dd97f49fded"
@@ -36,14 +32,24 @@
 #define HS_CRASHLYTICS_KEY          @"48118b9b5992c16c30f272709e02fe01c05ee2d5"
 
 // questions
-
 #define IS_IPHONE5                  (([[UIScreen mainScreen] bounds].size.height-568) ? NO : YES)
 #define IPHONE5_OFFSET              88
 #define IPHONE5_COEF                IS_IPHONE5 ? ZERO : IPHONE5_OFFSET
 
+// fonts
 #define FONT_FAMILY                 @"CaeciliaLTStd"
 #define FONT_REGULAR                @"CaeciliaLTStd-Roman"
 #define FONT_LIGHT                  @"CaeciliaLTStd-Light"
 #define FONT_BOLD                   @"CaeciliaLTStd-Bold"
+
+// sizes
+#define WINDOW_WIDTH                [[UIScreen mainScreen] bounds].size.width
+#define WINDOW_HEIGHT               [[UIScreen mainScreen] bounds].size.height
+
+// colors
+#define COLOR_BACKGROUND            [UIColor colorWithRed:29.0/255.0 green:28.0/255.0 blue:38.0/255.0 alpha:1]
+#define COLOR_MENU_BACKGROUND       [UIColor colorWithRed:17.0/255.0 green:17.0/255.0 blue:24.0/255.0 alpha:1]
+#define COLOR_TITLE                 [UIColor colorWithRed:252.0/255.0 green:209.0/255.0 blue:0.0/255.0 alpha:1]
+#define COLOR_DESCRIPTION           [UIColor colorWithRed:172.0/255.0 green:169.0/255.0 blue:200.0/255.0 alpha:1]
 
 #endif

@@ -7,43 +7,107 @@
 //
 
 #import "HSHomeViewController.h"
+#import "HSAdBannerExpand.h"
+
+#pragma mark - Interface
 
 @interface HSHomeViewController ()
-
+- (void) setDisplay;
 @end
 
-@implementation HSHomeViewController
+#pragma mark - Implementation
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@implementation HSHomeViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // ...
+    [scr setContentSize:CGSizeMake(v.frame.size.width, v.frame.size.height)];
+    [scr addSubview:v];
+    
+    //[scrDisplay addSubview:butExpo];
+    
+    // ...
+    [pageControl setNumberOfPages:0];
+	[tools requestUpdateFrom:URL_ADS success:^{
+		// ...
+		NSDictionary *data = [[tools JSONData] objectForKey:KEY_DATA];
+        [tools propertyListWrite:data forFileName:PLIST_ADS];
+        [self setDisplay];
+	} fail:^{
+		// ...
+	}];
 }
 
-- (void)didReceiveMemoryWarning
+- (void) setDisplay
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSInteger n = ([adManager hasAdWithCategory:kAdBannerHome] ? 1 : 0);
+    [pageControl setNumberOfPages:1+n];
+    [pageControl setCurrentPage:0];
+    [pageControl setTintColor:COLOR_TITLE];
+    
+    NSInteger w = ([adManager hasAdWithCategory:kAdBannerHome] ? WINDOW_WIDTH : 0);
+    [scrDisplay setContentSize:CGSizeMake(WINDOW_WIDTH+w, 200)];
+    
+    // ...
+    [adManager addAdTo:scr type:kAdBannerExpand];
+    [adManager addAdTo:scrDisplay type:kAdBannerHome];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - IBActions
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (IBAction) pressExpo:(UIButton*)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
-*/
+- (IBAction) pressEducation:(UIButton*)sender
+{
+    //[tools dialogWithMessage:@"Este conteúdo estará disponível em breve." cancelButton:@"OK" title:@"Conteúdo Indisponível"];
+}
+- (IBAction) pressTV:(UIButton*)sender
+{
+    NSString *strURL = @"http://www.youtube.com/watch?v=ZHolmn4LBzg";
+    NSURL *url = [ [ NSURL alloc ] initWithString: strURL ];
+    [[UIApplication sharedApplication] openURL:url];
+}
+- (IBAction) pressIssues:(UIButton*)sender
+{
+    
+}
+- (IBAction) pressBooks:(UIButton*)sender
+{
+    
+}
+
+#pragma mark - ScrollView Delegate
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (scrollView == scrDisplay) {
+        float position = scrollView.contentOffset.x/WINDOW_WIDTH;
+        [pageControl setCurrentPage:position];
+    }
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if (scrollView == scrDisplay) {
+        float position = scrollView.contentOffset.x/WINDOW_WIDTH;
+        [pageControl setCurrentPage:position];
+    }
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    for (UIView *subv in [[self view] subviews]) {
+        if ([subv isKindOfClass:[HSMAdBannerExpand class]]) {
+            HSMAdBannerExpand *ban = (HSMAdBannerExpand*)subv;
+            if ([ban isExpanded]) {
+                [ban performReduce];
+            }
+        }
+    }
+}
 
 @end

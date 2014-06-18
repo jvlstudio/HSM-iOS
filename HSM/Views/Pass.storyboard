@@ -4,17 +4,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Passes View Controller - Root View Controller-->
+        <!--Passes View Controller - Passes-->
         <scene sceneID="iXI-bk-bC9">
             <objects>
                 <tableViewController storyboardIdentifier="passes" id="2Xw-XQ-L1N" customClass="HSPassesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mwx-XH-qUu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Eid-IO-kbV" customClass="HSPassCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eid-IO-kbV" id="jOw-yK-hXR">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -30,13 +30,14 @@
                             <outlet property="delegate" destination="2Xw-XQ-L1N" id="d9D-6q-c5B"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="zrd-qq-i7u"/>
+                    <navigationItem key="navigationItem" title="Passes" id="zrd-qq-i7u"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pf-La-Hcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664" y="130"/>
         </scene>
-        <!--Pass Form View Controller-->
+        <!--Pass Form View Controller - Seu Passe-->
         <scene sceneID="tEy-LJ-Ncx">
             <objects>
                 <viewController storyboardIdentifier="pass_single" id="a7V-c0-bor" customClass="HSPassFormViewController" sceneMemberID="viewController">
@@ -45,11 +46,13 @@
                         <viewControllerLayoutGuide type="bottom" id="Gth-a3-YaW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aV9-6c-0y9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.13333334029999999" green="0.1294117719" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Yxf-bJ-RiT"/>
+                    <navigationItem key="navigationItem" title="Seu Passe" id="Yxf-bJ-RiT">
+                        <barButtonItem key="leftBarButtonItem" image="btbar_back.png" id="0kK-Rt-hIr"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="EBM-hm-7jX" kind="push" identifier="segue_done" id="hXc-m0-7Va"/>
                     </connections>
@@ -58,7 +61,7 @@
             </objects>
             <point key="canvasLocation" x="1207" y="130"/>
         </scene>
-        <!--Pass Done View Controller-->
+        <!--Pass Done View Controller - Obrigado!-->
         <scene sceneID="rUF-Xe-Sou">
             <objects>
                 <viewController storyboardIdentifier="pass_done" id="EBM-hm-7jX" customClass="HSPassDoneViewController" sceneMemberID="viewController">
@@ -67,11 +70,52 @@
                         <viewControllerLayoutGuide type="bottom" id="Wuw-qy-scu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="umO-3c-ZxY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydD-35-6wy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="passes_id_done.png" translatesAutoresizingMaskIntoConstraints="NO" id="vaN-zh-4Zi">
+                                        <rect key="frame" x="107" y="31" width="106" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aguarde um de nossos consultores entrar em contato para confirmar os dados e finalizar a compra." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="253" translatesAutoresizingMaskIntoConstraints="NO" id="ggM-tH-XCY" customClass="KDLabel">
+                                        <rect key="frame" x="34" y="283" width="253" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.50196078430000002" green="0.4941176471" blue="0.58039215690000001" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sua solicitação de compra de passe foi realizada com sucesso!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="253" translatesAutoresizingMaskIntoConstraints="NO" id="JE2-O0-7cD" customClass="KDLabel">
+                                        <rect key="frame" x="34" y="205" width="253" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIl-Ui-ilO">
+                                        <rect key="frame" x="15" y="390" width="291" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Voltar para o Início" backgroundImage="bt_large_purple.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OBRIGADO!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-PX-LvY" customClass="KDLabel">
+                                        <rect key="frame" x="20" y="166" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.83137261870000001" green="0.69411766529999996" blue="0.094117656349999995" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="raS-zf-SWQ"/>
+                    <navigationItem key="navigationItem" title="Obrigado!" id="raS-zf-SWQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvu-uY-Yga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,8 +125,10 @@
         <scene sceneID="Y2o-oi-Iht">
             <objects>
                 <navigationController definesPresentationContext="YES" id="ibg-aj-40U" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UOe-qY-haD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UOe-qY-haD">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.96862751250000001" green="0.82745105029999999" blue="0.1764705926" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="barTintColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="2Xw-XQ-L1N" kind="relationship" relationship="rootViewController" id="dKp-ym-Q93"/>
@@ -93,6 +139,11 @@
             <point key="canvasLocation" x="130" y="130"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bt_large_purple.png" width="291" height="45"/>
+        <image name="btbar_back.png" width="25" height="25"/>
+        <image name="passes_id_done.png" width="106" height="106"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
