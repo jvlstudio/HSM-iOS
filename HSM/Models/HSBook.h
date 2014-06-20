@@ -13,6 +13,7 @@
     NSString *uniqueId;
     NSString *title;
     NSString *subtitle;
+    NSString *slug;
     NSString *description;
     NSString *authorName;
     NSString *authorDescription;
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) NSString *uniqueId;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *subtitle;
+@property (nonatomic, strong) NSString *slug;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *authorName;
 @property (nonatomic, strong) NSString *authorDescription;

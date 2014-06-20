@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HSBook.h"
 
 @interface HSBooksViewController : UITableViewController
+{
+    NSArray *rows;
+    HSBook *selectedBook;
+}
 
 @end

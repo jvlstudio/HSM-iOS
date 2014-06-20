@@ -17,13 +17,37 @@
 #pragma mark - Implementation
 
 @implementation HSRestClient
+{
+    BOOL canLoadInBackground;
+}
 
 #pragma mark - Methods
+
+- (void) loadInBackground:(BOOL) option
+{
+    canLoadInBackground = option;
+}
 
 // events..
 - (void) events:(void(^)(BOOL succeed, NSDictionary *result))block
 {
     NSString *stringURL = [NSString stringWithFormat:@"%@/events.php", HS_REST_SOURCE];
+    // request..
+    NSURL *url = [NSURL URLWithString:stringURL];
+    [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
+}
+// books
+- (void) books:(void(^)(BOOL succeed, NSDictionary *result))block
+{
+    NSString *stringURL = [NSString stringWithFormat:@"%@/books.php", HS_REST_SOURCE];
+    // request..
+    NSURL *url = [NSURL URLWithString:stringURL];
+    [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
+}
+// magazines
+- (void) magazines:(void(^)(BOOL succeed, NSDictionary *result))block
+{
+    NSString *stringURL = [NSString stringWithFormat:@"%@/magazines.php", HS_REST_SOURCE];
     // request..
     NSURL *url = [NSURL URLWithString:stringURL];
     [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
@@ -74,7 +98,8 @@
         // error..
         if (connectionError) {
             NSLog(@"[HS_REST] conection error: %@", connectionError.description);
-            [[HSMaster tools] dialogWithMessage:@"Não foi possível conectar-se à internet." title:@"Falha de conexão"];
+            if(!canLoadInBackground)
+                [[HSMaster tools] dialogWithMessage:@"Não foi possível conectar-se à internet." title:@"Falha de conexão"];
             return;
         }
         // received data..

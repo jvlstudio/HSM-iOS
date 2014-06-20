@@ -10,7 +10,7 @@
 
 @implementation HSNetworkCell
 
-@synthesize labName, labeDescription;
-@synthesize imgColor;
+@synthesize labName, labDescription;
+@synthesize imgColor, imgOpt;
 
 @end

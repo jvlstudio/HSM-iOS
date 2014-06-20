@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface HSEventsViewController : UITableViewController
+{
+    NSArray *rows;
+    IBOutlet UISegmentedControl *segment;
+}
+
+#pragma mark - IBActions
+
+- (IBAction) changedValue:(UISegmentedControl*)sender;
 
 @end

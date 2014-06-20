@@ -8,18 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+#pragma mark - Typedef
+
+typedef enum HSTabBarOptions : NSInteger
+{
+    kTabHome        = 0,
+    kTabEvents      = 1,
+    kTabNetwork     = 2,
+    kTabBooks       = 3,
+    kTabMore        = 4
+}
+HSTabBarOptions;
+
+#pragma mark - Interface
+
 @interface HSHomeViewController : UIViewController <UIScrollViewDelegate>
 {
-    IBOutlet UIScrollView *scr;
-    IBOutlet UIScrollView *scrDisplay;
+    IBOutlet UIScrollView *scroll;
+    IBOutlet UIScrollView *scrollDisplay;
     IBOutlet UIPageControl *pageControl;
-    IBOutlet UIView *v;
-    
-    IBOutlet UIButton *butExpo;
-    IBOutlet UIButton *butEducation;
-    IBOutlet UIButton *butTV;
-    IBOutlet UIButton *butIssues;
-    IBOutlet UIButton *butBooks;
 }
 
 #pragma mark -

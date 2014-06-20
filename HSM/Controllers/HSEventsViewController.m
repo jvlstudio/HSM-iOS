@@ -6,13 +6,19 @@
 //  Copyright (c) 2014 ikomm Digital Solutions. All rights reserved.
 //
 
+#import "HSEventSingleViewController.h"
 #import "HSEventsViewController.h"
 
-@interface HSEventsViewController ()
+#import "HSEvent.h"
+#import "HSEventCell.h"
 
+@interface HSEventsViewController ()
+- (void) setConfigurations;
 @end
 
 @implementation HSEventsViewController
+
+#pragma mark - Init Methods
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -23,97 +29,69 @@
     return self;
 }
 
+#pragma mark - Controller Methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setConfigurations];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Methods
+
+- (void) setConfigurations
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    rows = [[HSMaster local] events];
+}
+
+#pragma mark - IBActions
+
+- (IBAction) changedValue:(UISegmentedControl*)sender
+{
+    if (segment.selectedSegmentIndex == 0)
+        rows = [[HSMaster local] nextEvents];
+    else
+        rows = [[HSMaster local] previousEvents];
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [rows count];
 }
-
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    HSEventCell *cell;
+    cell = (HSEventCell*)[tableView dequeueReusableCellWithIdentifier:HS_CELL_IDENTIFIER forIndexPath:indexPath];
     
     // Configure the cell...
+    HSEvent *event = [rows objectAtIndex:indexPath.row];
+    
+    [cell.labTitle setText:event.name];
+    [cell.labSubtitle setText:event.shortDescription];
+    [cell.labLocal setText:event.local];
+    //[cell.labDates setText:event.dates];
+    
+    [cell.labTitle setFont:[UIFont fontWithName:FONT_REGULAR size:cell.labTitle.font.pointSize]];
+    //[[cell labSubtext] setFont:[UIFont fontWithName:FONT_REGULAR size:cell.labSubtext.font.pointSize]];
+    [cell.labLocal setFont:[UIFont fontWithName:FONT_REGULAR size:cell.labLocal.font.pointSize]];
+    [cell.labDates setFont:[UIFont fontWithName:FONT_REGULAR size:cell.labDates.font.pointSize]];
+    
+    NSString *strImg    = [NSString stringWithFormat:@"events_list_%@.png", event.slug];
+    [cell.imgBackground setImage:[UIImage imageNamed:strImg]];
     
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    [self performSegueWithIdentifier:@"segue_single" sender:self];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

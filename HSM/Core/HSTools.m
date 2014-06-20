@@ -151,6 +151,12 @@
     return [emailTest evaluateWithObject:str];
 }
 
+- (NSArray*) explode: (NSString*) string bySeparator:(NSString*)separator
+{
+    NSArray* x = [string componentsSeparatedByString:separator];
+    return x;
+}
+
 #pragma mark - UIAlertViewDelegate Methods
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

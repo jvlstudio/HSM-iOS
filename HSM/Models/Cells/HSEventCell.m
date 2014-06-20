@@ -10,6 +10,7 @@
 
 @implementation HSEventCell
 
+@synthesize imgBackground;
 @synthesize labDates, labLocal, labSubtitle, labTitle;
 
 @end

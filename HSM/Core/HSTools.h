@@ -41,4 +41,6 @@ AlertViewOption;
 
 - (BOOL) isValidEmail:(NSString*) str;
 
+- (NSArray*) explode: (NSString*) string bySeparator:(NSString*)separator;
+
 @end

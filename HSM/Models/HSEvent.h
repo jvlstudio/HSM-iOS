@@ -12,6 +12,7 @@
 {
     NSString *uniqueId;
     NSString *name;
+    NSString *slug;
     NSString *shortDescription;
     NSString *largeDescription;
     NSString *local;
@@ -20,6 +21,7 @@
 
 @property (nonatomic, strong) NSString *uniqueId;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *slug;
 @property (nonatomic, strong) NSString *shortDescription;
 @property (nonatomic, strong) NSString *largeDescription;
 @property (nonatomic, strong) NSString *local;

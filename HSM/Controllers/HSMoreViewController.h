@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface HSMoreViewController : UITableViewController
+{
+    NSArray *rows;
+}
 
 @end

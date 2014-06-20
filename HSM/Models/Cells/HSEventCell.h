@@ -10,6 +10,7 @@
 
 @interface HSEventCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UIImageView *imgBackground;
 @property (nonatomic, weak) IBOutlet UILabel *labTitle;
 @property (nonatomic, weak) IBOutlet UILabel *labSubtitle;
 @property (nonatomic, weak) IBOutlet UILabel *labLocal;

@@ -11,7 +11,7 @@
 @implementation HSEvent
 
 @synthesize uniqueId;
-@synthesize name;
+@synthesize name, slug;
 @synthesize shortDescription, largeDescription;
 @synthesize local;
 @synthesize dates;

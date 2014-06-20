@@ -8,9 +8,9 @@
 
 #import "HSAnalytics.h"
 #import "HSRestClient.h"
+#import "HSLocalClient.h"
+#import "HSNetworkManager.h"
 #import "HSTools.h"
-#import "HSAdManager.h"
-#import "HSEventManager.h"
 
 @interface HSMaster : NSObject
 
@@ -18,9 +18,9 @@
 + (HSMaster *) core;
 + (HSAnalytics *) analytics;
 + (HSRestClient *) rest;
++ (HSLocalClient *) local;
++ (HSNetworkManager *) network;
 + (HSTools *) tools;
-+ (HSAdManager *) ads;
-+ (HSEventManager *) events;
 
 // Properties
 @property (nonatomic, strong) NSDateFormatter *stringConverter;

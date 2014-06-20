@@ -11,6 +11,7 @@
 
 // urls
 #define	HS_URL						@"apps.ikomm.com.br/hsm5"
+#define HS_URL_QRCODE               @"http://chart.apis.google.com/chart?cht=qr&chs=500x500&chl=%@"
 #define HS_REST_SOURCE				@"http://apps.ikomm.com.br/hsm5/rest"
 
 // resources
@@ -20,6 +21,9 @@
 // property list
 #define HS_PLIST_EVENTS             @"HS-Events"
 #define HS_PLIST_ADS                @"HS-Ads"
+#define HS_PLIST_BOOKS              @"HS-Books"
+#define HS_PLIST_MAGAZINES          @"HS-Magazines"
+#define HS_PLIST_NETWORK            @"HS-Network"
 
 // third-part app ids
 #define HS_PUBLIC_TOKEN				@"4fc5c9fda3dc404c65c9f6167a3da62c"
@@ -51,5 +55,9 @@
 #define COLOR_MENU_BACKGROUND       [UIColor colorWithRed:17.0/255.0 green:17.0/255.0 blue:24.0/255.0 alpha:1]
 #define COLOR_TITLE                 [UIColor colorWithRed:252.0/255.0 green:209.0/255.0 blue:0.0/255.0 alpha:1]
 #define COLOR_DESCRIPTION           [UIColor colorWithRed:172.0/255.0 green:169.0/255.0 blue:200.0/255.0 alpha:1]
+
+// keys / identifiers
+
+#define HS_CELL_IDENTIFIER          @"cell"
 
 #endif

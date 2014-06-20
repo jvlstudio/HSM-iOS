@@ -25,7 +25,11 @@ HTTPMethod;
 
 @interface HSRestClient : NSObject
 
+- (void) loadInBackground:(BOOL) option;
+
 - (void) events:(void(^)(BOOL succeed, NSDictionary *result))block;
+- (void) books:(void(^)(BOOL succeed, NSDictionary *result))block;
+- (void) magazines:(void(^)(BOOL succeed, NSDictionary *result))block;
 
 - (void) ads:(void(^)(BOOL succeed, NSDictionary *result))block;
 - (void) adClicked:(NSString *) adId completion:(void(^)(BOOL succeed, NSDictionary *result))block;

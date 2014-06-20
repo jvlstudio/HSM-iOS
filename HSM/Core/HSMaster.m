@@ -29,24 +29,6 @@
         return singleton;
     }
 }
-+ (HSRestClient *) rest {
-	static HSRestClient* rest;
-	@synchronized(self){
-		if(!rest){
-			rest = [HSRestClient new];
-		}
-		return rest;
-	}
-}
-+ (HSTools *) tools {
-	static HSTools* tools;
-	@synchronized(self){
-		if(!tools){
-			tools = [HSTools new];
-		}
-		return tools;
-	}
-}
 + (HSAnalytics *) analytics {
 	static HSAnalytics* analytics;
 	@synchronized(self){
@@ -56,22 +38,41 @@
 		return analytics;
 	}
 }
-+ (HSAdManager *) ads {
-	static HSAdManager* ad;
++ (HSRestClient *) rest {
+	static HSRestClient* rest;
 	@synchronized(self){
-		if(!ad){
-			ad = [HSAdManager new];
+		if(!rest){
+			rest = [HSRestClient new];
+            [rest loadInBackground:NO];
 		}
-		return ad;
+		return rest;
 	}
 }
-+ (HSEventManager *) events {
-	static HSEventManager* events;
++ (HSLocalClient *) local {
+	static HSLocalClient* local;
 	@synchronized(self){
-		if(!events){
-			events = [HSEventManager new];
+		if(!local){
+			local = [HSLocalClient new];
 		}
-		return events;
+		return local;
+	}
+}
++ (HSNetworkManager *) network {
+	static HSNetworkManager* network;
+	@synchronized(self){
+		if(!network){
+			network = [HSNetworkManager new];
+		}
+		return network;
+	}
+}
++ (HSTools *) tools {
+	static HSTools* tools;
+	@synchronized(self){
+		if(!tools){
+			tools = [HSTools new];
+		}
+		return tools;
 	}
 }
 

@@ -17,3 +17,6 @@
 
 #import "definitions.h"
 #import "HSMaster.h"
+
+#import "UILabel+VerticalAlign.h"
+#import "UIImageView+WebCache.h"

@@ -12,7 +12,7 @@
 #pragma mark - Interface
 
 @interface HSHomeViewController ()
-- (void) setDisplay;
+- (void) setConfigurations;
 @end
 
 #pragma mark - Implementation
@@ -23,49 +23,32 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    // ...
-    [scr setContentSize:CGSizeMake(v.frame.size.width, v.frame.size.height)];
-    [scr addSubview:v];
-    
-    //[scrDisplay addSubview:butExpo];
-    
-    // ...
-    [pageControl setNumberOfPages:0];
-	[tools requestUpdateFrom:URL_ADS success:^{
-		// ...
-		NSDictionary *data = [[tools JSONData] objectForKey:KEY_DATA];
-        [tools propertyListWrite:data forFileName:PLIST_ADS];
-        [self setDisplay];
-	} fail:^{
-		// ...
-	}];
+    [self setConfigurations];
 }
 
-- (void) setDisplay
+#pragma mark - Methods
+
+- (void) setConfigurations
 {
-    NSInteger n = ([adManager hasAdWithCategory:kAdBannerHome] ? 1 : 0);
-    [pageControl setNumberOfPages:1+n];
+    // scroll
+    [scroll setContentSize:CGSizeMake(WINDOW_WIDTH, 540)];
+    // scroll display
+    [scrollDisplay setPagingEnabled:YES];
+    // page control
+    [pageControl setNumberOfPages:1];
     [pageControl setCurrentPage:0];
     [pageControl setTintColor:COLOR_TITLE];
-    
-    NSInteger w = ([adManager hasAdWithCategory:kAdBannerHome] ? WINDOW_WIDTH : 0);
-    [scrDisplay setContentSize:CGSizeMake(WINDOW_WIDTH+w, 200)];
-    
-    // ...
-    [adManager addAdTo:scr type:kAdBannerExpand];
-    [adManager addAdTo:scrDisplay type:kAdBannerHome];
 }
 
 #pragma mark - IBActions
 
 - (IBAction) pressExpo:(UIButton*)sender
 {
-    
+    [[self tabBarController] setSelectedIndex:kTabEvents];
 }
 - (IBAction) pressEducation:(UIButton*)sender
 {
-    //[tools dialogWithMessage:@"Este conteúdo estará disponível em breve." cancelButton:@"OK" title:@"Conteúdo Indisponível"];
+    [[HSMaster tools] dialogWithMessage:@"Este conteúdo estará disponível em breve." title:@"Conteúdo Indisponível"];
 }
 - (IBAction) pressTV:(UIButton*)sender
 {
@@ -75,31 +58,32 @@
 }
 - (IBAction) pressIssues:(UIButton*)sender
 {
-    
+    [[self tabBarController] setSelectedIndex:kTabMore];
 }
 - (IBAction) pressBooks:(UIButton*)sender
 {
-    
+    [[self tabBarController] setSelectedIndex:kTabBooks];
 }
 
 #pragma mark - ScrollView Delegate
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if (scrollView == scrDisplay) {
+    if (scrollView == scrollDisplay) {
         float position = scrollView.contentOffset.x/WINDOW_WIDTH;
         [pageControl setCurrentPage:position];
     }
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if (scrollView == scrDisplay) {
+    if (scrollView == scrollDisplay) {
         float position = scrollView.contentOffset.x/WINDOW_WIDTH;
         [pageControl setCurrentPage:position];
     }
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
+    /*
     for (UIView *subv in [[self view] subviews]) {
         if ([subv isKindOfClass:[HSMAdBannerExpand class]]) {
             HSMAdBannerExpand *ban = (HSMAdBannerExpand*)subv;
@@ -107,7 +91,7 @@
                 [ban performReduce];
             }
         }
-    }
+    }*/
 }
 
 @end

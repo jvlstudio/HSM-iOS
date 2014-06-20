@@ -9,41 +9,112 @@
 #import "HSBookSingleViewController.h"
 
 @interface HSBookSingleViewController ()
-
+- (void) setConfiguration;
 @end
 
 @implementation HSBookSingleViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize book;
+
+#pragma mark - Controller Methods
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setConfiguration];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Methods
+
+- (void) setConfiguration
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // infos
+    [labTitle setText:book.title];
+    [labSubtitle setText:book.subtitle];
+    [labTitle setFont:[UIFont fontWithName:FONT_REGULAR size:labTitle.font.pointSize]];
+    [labSubtitle setFont:[UIFont fontWithName:FONT_REGULAR size:labSubtitle.font.pointSize]];
+    
+    [labTitle alignBottom];
+    [labSubtitle alignTop];
+    
+    [labPrice setText:[NSString stringWithFormat:@"R$ %@", book.price]];
+    [labAuthor setText:book.authorName];
+    //[labEspecDimensions setText:[[self dictionary] objectForKey:KEY_DIMENSIONS]];
+    //[labEspecPages setText:[[self dictionary] objectForKey:KEY_PAGES]];
+    //[labEspecCodebarBook setText:[[self dictionary] objectForKey:KEY_CODEBAR_BOOK]];
+    //[labEspecCodebarEBook setText:[[self dictionary] objectForKey:KEY_CODEBAR_EBOOK]];
+    [tvSinopse setText:book.description];
+    [tvAuthor setText:book.authorDescription];
+    
+    NSString *strImg    = [NSString stringWithFormat:@"%@.png", book.slug];
+    [imgPicture setImage:[UIImage imageNamed:strImg]];
+    
+    // scroll
+    [scroll setContentSize:CGSizeMake(WINDOW_WIDTH, 500)];
+    
+    [scrollSub setContentSize:CGSizeMake(WINDOW_WIDTH*3, scrollSub.frame.size.height)];
+    [scrollSub addSubview:vDescription];
+    [scrollSub addSubview:vEspec];
+    [scrollSub addSubview:vAuthor];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark -
+#pragma mark IBActions
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (IBAction) pressBuy:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSString *strURL = book.link;
+    NSURL *url = [ [ NSURL alloc ] initWithString: strURL ];
+    [[UIApplication sharedApplication] openURL:url];
 }
-*/
+- (IBAction) segmentChange:(UISegmentedControl*)sender
+{
+    switch (sender.selectedSegmentIndex)
+    {
+        case 0:
+        {
+            [UIView animateWithDuration:0.5f animations:^{
+                [scrollSub setContentOffset:CGPointMake(0, 0)];
+            }];
+        }
+            break;
+        case 1:
+        {
+            [UIView animateWithDuration:0.5f animations:^{
+                [scrollSub setContentOffset:CGPointMake(WINDOW_WIDTH, 0)];
+            }];
+        }
+            break;
+        case 2:
+        {
+            [UIView animateWithDuration:0.5f animations:^{
+                [scrollSub setContentOffset:CGPointMake((WINDOW_WIDTH*2), 0)];
+            }];
+        }
+            break;
+    }
+}
+
+#pragma mark - Scroll Methods
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if (scrollView == scrollSub)
+    {
+        CGPoint offset = scrollView.contentOffset;
+        if (offset.x == 0)
+        {
+            [segment setSelectedSegmentIndex:0];
+        }
+        if (offset.x == WINDOW_WIDTH)
+        {
+            [segment setSelectedSegmentIndex:1];
+        }
+        if (offset.x == (WINDOW_WIDTH*2))
+        {
+            [segment setSelectedSegmentIndex:2];
+        }
+    }
+}
 
 @end

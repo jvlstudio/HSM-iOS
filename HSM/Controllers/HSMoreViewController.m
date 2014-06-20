@@ -6,43 +6,79 @@
 //  Copyright (c) 2014 ikomm Digital Solutions. All rights reserved.
 //
 
+#import "HSMagazinesViewController.h"
 #import "HSMoreViewController.h"
 
-@interface HSMoreViewController ()
+#import "HSMoreCell.h"
 
+@interface HSMoreViewController ()
+- (void) setConfigurations;
 @end
 
 @implementation HSMoreViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark - Controller Methods
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setConfigurations];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Methods
+
+- (void) setConfigurations
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    rows = @[ @{ @"slug" : @"issues", @"name" : @"HSM Editora"},
+              @{ @"slug" : @"tv", @"name" : @"HSM Vídeos"} ];
 }
 
-/*
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [rows count];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HSMoreCell *cell;
+    cell = (HSMoreCell*)[tableView dequeueReusableCellWithIdentifier:HS_CELL_IDENTIFIER forIndexPath:indexPath];
+    
+    // Configure the cell...
+    NSDictionary *dict = [rows objectAtIndex:indexPath.row];
+    [cell.labTitle setText:[dict objectForKey:@"name"]];
+    [cell.imgIcon setImage:[UIImage imageNamed:[NSString stringWithFormat:@"icon_%@.png", [dict objectForKey:@"slug"]]]];
+    
+    [cell.labTitle setFont:[UIFont fontWithName:FONT_BOLD size:cell.labTitle.font.pointSize]];
+    
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dict = [rows objectAtIndex:indexPath.row];
+    if ([[dict objectForKey:@"slug"] isEqualToString:@"issues"]) {
+        [self performSegueWithIdentifier:@"segue_magazines" sender:self];
+    }
+    else {
+        NSString *strURL = @"http://www.youtube.com/watch?v=ZHolmn4LBzg";
+        NSURL *url = [ [ NSURL alloc ] initWithString: strURL ];
+        [[UIApplication sharedApplication] openURL:url];
+    }
+}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+/*
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"segue_magazines"])
+    {
+        HSMagazinesViewController *vc = [segue destinationViewController];
+    }
 }
 */
 
