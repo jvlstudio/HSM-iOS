@@ -351,6 +351,178 @@
             </objects>
             <point key="canvasLocation" x="2256" y="-591"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Swd-HG-hxw">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="69W-aH-8dK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="reo-wO-heh">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.13333334029999999" green="0.1294117719" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WR3-kc-TyG" kind="relationship" relationship="rootViewController" id="6UU-mK-a4f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H6o-lm-8BS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2256" y="104"/>
+        </scene>
+        <!--Network Sign View Controller - Meu Cartão-->
+        <scene sceneID="e2c-ST-5ji">
+            <objects>
+                <viewController id="WR3-kc-TyG" customClass="HSNetworkSignViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rjU-Xl-LXx"/>
+                        <viewControllerLayoutGuide type="bottom" id="FCe-NO-FvF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2SE-jX-9zj">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFf-Cv-4ve">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ew-y3-mQF">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="396"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cell_regular.png" translatesAutoresizingMaskIntoConstraints="NO" id="fMb-lX-Ocs">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cell_regular.png" translatesAutoresizingMaskIntoConstraints="NO" id="SpW-fK-5ev">
+                                                <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cell_regular.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Vi-mg-PvU">
+                                                <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cell_regular.png" translatesAutoresizingMaskIntoConstraints="NO" id="vyL-PE-05J">
+                                                <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cell_regular.png" translatesAutoresizingMaskIntoConstraints="NO" id="res-Ii-D3u">
+                                                <rect key="frame" x="0.0" y="176" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cell_regular.png" translatesAutoresizingMaskIntoConstraints="NO" id="ag7-OJ-zae">
+                                                <rect key="frame" x="0.0" y="220" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cell_regular.png" translatesAutoresizingMaskIntoConstraints="NO" id="cFf-k3-34X">
+                                                <rect key="frame" x="0.0" y="264" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6s-74-XwB">
+                                                <rect key="frame" x="85" y="332" width="150" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Criar" backgroundImage="bt_tiny_clear.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressCreate:" destination="WR3-kc-TyG" eventType="touchUpInside" id="YFE-0Y-CtS"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome completo *" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nP0-IJ-gJe">
+                                                <rect key="frame" x="20" y="0.0" width="280" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="doneEditing:" destination="WR3-kc-TyG" eventType="editingDidEndOnExit" id="Wzd-Gm-nRp"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail *" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vyX-BQ-RAd">
+                                                <rect key="frame" x="20" y="44" width="280" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="doneEditing:" destination="WR3-kc-TyG" eventType="editingDidEndOnExit" id="tgf-M0-xvo"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Telefone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NHf-hK-Dn2">
+                                                <rect key="frame" x="20" y="88" width="280" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="doneEditing:" destination="WR3-kc-TyG" eventType="editingDidEndOnExit" id="z18-M2-a4F"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Celular" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="81Y-n5-FQV">
+                                                <rect key="frame" x="20" y="132" width="280" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="doneEditing:" destination="WR3-kc-TyG" eventType="editingDidEndOnExit" id="PfR-RA-tH5"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Empresa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6RE-GH-5c6">
+                                                <rect key="frame" x="20" y="176" width="280" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="doneEditing:" destination="WR3-kc-TyG" eventType="editingDidEndOnExit" id="S4X-jt-tKe"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cargo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRA-7T-aMM">
+                                                <rect key="frame" x="20" y="220" width="280" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="doneEditing:" destination="WR3-kc-TyG" eventType="editingDidEndOnExit" id="zHj-qo-fHR"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Website" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JAZ-Xg-x37">
+                                                <rect key="frame" x="20" y="264" width="280" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="doneEditing:" destination="WR3-kc-TyG" eventType="editingDidEndOnExit" id="wtp-qG-xlh"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Meu Cartão" id="dF8-tY-L00"/>
+                    <connections>
+                        <outlet property="butCreate" destination="S6s-74-XwB" id="naX-2X-NP7"/>
+                        <outlet property="contentView" destination="9ew-y3-mQF" id="uWL-Uu-k3T"/>
+                        <outlet property="scroll" destination="MFf-Cv-4ve" id="VUF-Tu-zYG"/>
+                        <outlet property="tfCompany" destination="6RE-GH-5c6" id="g1m-gw-q5N"/>
+                        <outlet property="tfEmail" destination="vyX-BQ-RAd" id="z2V-KU-R1Y"/>
+                        <outlet property="tfMobile" destination="81Y-n5-FQV" id="X6W-P1-aOe"/>
+                        <outlet property="tfName" destination="nP0-IJ-gJe" id="eNv-XZ-EL8"/>
+                        <outlet property="tfPhone" destination="NHf-hK-Dn2" id="cRO-nn-hJW"/>
+                        <outlet property="tfRole" destination="oRA-7T-aMM" id="8Wz-mh-LE2"/>
+                        <outlet property="tfWebsite" destination="JAZ-Xg-x37" id="A7G-JZ-nM7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36q-X0-yqN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2774" y="104"/>
+        </scene>
         <!--Event Single View Controller - Evento-->
         <scene sceneID="gNe-Ui-3Gm">
             <objects>
@@ -535,6 +707,7 @@
                         <outlet property="selfColor" destination="gub-iI-3Xh" id="HnY-La-ZDG"/>
                         <outlet property="selfSubtitle" destination="sfG-6g-kYO" id="gE8-ja-xCG"/>
                         <outlet property="selfTitle" destination="fGD-rg-NfE" id="1Ii-6P-bpr"/>
+                        <segue destination="69W-aH-8dK" kind="modal" identifier="segue_sign" id="RDA-Z2-zGl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbF-Tm-7bR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -665,7 +838,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXo-CB-82D">
-                                <rect key="frame" x="174" y="152" width="125" height="125"/>
+                                <rect key="frame" x="174" y="149" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -1013,6 +1186,7 @@
         <image name="btbar_scan.png" width="25" height="25"/>
         <image name="but_plus.png" width="38" height="38"/>
         <image name="cell_event_wrapper.png" width="320" height="38"/>
+        <image name="cell_regular.png" width="320" height="44"/>
         <image name="home_books.png" width="160" height="150"/>
         <image name="home_education.png" width="160" height="150"/>
         <image name="home_feat.png" width="320" height="200"/>

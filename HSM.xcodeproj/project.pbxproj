@@ -187,6 +187,8 @@
 		4A674AD3195240FB0048376C /* HSAdBannerFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A674AD2195240FB0048376C /* HSAdBannerFooter.m */; };
 		4A674AD6195241080048376C /* HSAdBannerHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A674AD5195241080048376C /* HSAdBannerHome.m */; };
 		4A674ADA195241220048376C /* HSAdBannerExpand.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A674AD9195241220048376C /* HSAdBannerExpand.m */; };
+		4A817CD119585F8E00208DFB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A817CD019585F8E00208DFB /* MBProgressHUD.m */; };
+		4A817CD41958891A00208DFB /* HSNetworkSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A817CD31958891A00208DFB /* HSNetworkSignViewController.m */; };
 		4A9A6AEE1954BDF9004F1BE7 /* HSLocalClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A6AED1954BDF9004F1BE7 /* HSLocalClient.m */; };
 		4A9A6AF01954BF79004F1BE7 /* HS-Books.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A9A6AEF1954BF79004F1BE7 /* HS-Books.plist */; };
 		4A9A6AF41954C6D8004F1BE7 /* UILabel+VerticalAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A6AF31954C6D8004F1BE7 /* UILabel+VerticalAlign.m */; };
@@ -460,6 +462,10 @@
 		4A674AD5195241080048376C /* HSAdBannerHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSAdBannerHome.m; path = Resources/HSAdBannerHome.m; sourceTree = "<group>"; };
 		4A674AD8195241220048376C /* HSAdBannerExpand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSAdBannerExpand.h; path = Resources/HSAdBannerExpand.h; sourceTree = "<group>"; };
 		4A674AD9195241220048376C /* HSAdBannerExpand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSAdBannerExpand.m; path = Resources/HSAdBannerExpand.m; sourceTree = "<group>"; };
+		4A817CCF19585F8E00208DFB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4A817CD019585F8E00208DFB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		4A817CD21958891A00208DFB /* HSNetworkSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSNetworkSignViewController.h; sourceTree = "<group>"; };
+		4A817CD31958891A00208DFB /* HSNetworkSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSNetworkSignViewController.m; sourceTree = "<group>"; };
 		4A9A6AEC1954BDF9004F1BE7 /* HSLocalClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLocalClient.h; sourceTree = "<group>"; };
 		4A9A6AED1954BDF9004F1BE7 /* HSLocalClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLocalClient.m; sourceTree = "<group>"; };
 		4A9A6AEF1954BF79004F1BE7 /* HS-Books.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Books.plist"; sourceTree = "<group>"; };
@@ -920,6 +926,24 @@
 			name = "Banner Expand";
 			sourceTree = "<group>";
 		};
+		4A817CCE19585F8E00208DFB /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4A817CCF19585F8E00208DFB /* MBProgressHUD.h */,
+				4A817CD019585F8E00208DFB /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		4A817CD51958891D00208DFB /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				4A817CD21958891A00208DFB /* HSNetworkSignViewController.h */,
+				4A817CD31958891A00208DFB /* HSNetworkSignViewController.m */,
+			);
+			name = Sign;
+			sourceTree = "<group>";
+		};
 		4A9A6AEB1954BDDA004F1BE7 /* Local */ = {
 			isa = PBXGroup;
 			children = (
@@ -1209,6 +1233,7 @@
 		4AB136C5194F84B700CD60AD /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				4A817CCE19585F8E00208DFB /* MBProgressHUD */,
 				4A9A6AFB1954D1AA004F1BE7 /* ZBarSDK */,
 				4A9A6AF11954C6D8004F1BE7 /* UILabel+VerticalAlign */,
 				4AB136C8194F84B700CD60AD /* GoogleAnalytics-iOS-SDK */,
@@ -1502,6 +1527,7 @@
 			children = (
 				4AB1376A194F914500CD60AD /* HSNetworkViewController.h */,
 				4AB1376B194F914500CD60AD /* HSNetworkViewController.m */,
+				4A817CD51958891D00208DFB /* Sign */,
 				4AB1376D194F914800CD60AD /* Single */,
 			);
 			name = Network;
@@ -1874,6 +1900,7 @@
 				4AB1376C194F914500CD60AD /* HSNetworkViewController.m in Sources */,
 				4AB1372E194F861200CD60AD /* HSPanelistsViewController.m in Sources */,
 				4A674AD3195240FB0048376C /* HSAdBannerFooter.m in Sources */,
+				4A817CD41958891A00208DFB /* HSNetworkSignViewController.m in Sources */,
 				4AB13752194F87C500CD60AD /* HSBook.m in Sources */,
 				4AB13728194F85DA00CD60AD /* HSEventsViewController.m in Sources */,
 				4AB13716194F856D00CD60AD /* HSPanelist.m in Sources */,
@@ -1885,6 +1912,7 @@
 				4A674ACD195240BB0048376C /* HSAdSuperstitial.m in Sources */,
 				4A3406BF194F9AD000347815 /* HSLecture.m in Sources */,
 				4AB1372B194F85E800CD60AD /* HSAgendaViewController.m in Sources */,
+				4A817CD119585F8E00208DFB /* MBProgressHUD.m in Sources */,
 				4AB13725194F85C900CD60AD /* HSHomeViewController.m in Sources */,
 				4AB13703194F851900CD60AD /* HSAnalytics.m in Sources */,
 				4A9A6AF81954CE92004F1BE7 /* HSMagazine.m in Sources */,
