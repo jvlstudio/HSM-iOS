@@ -30,6 +30,9 @@ HTTPMethod;
 - (void) events:(void(^)(BOOL succeed, NSDictionary *result))block;
 - (void) books:(void(^)(BOOL succeed, NSDictionary *result))block;
 - (void) magazines:(void(^)(BOOL succeed, NSDictionary *result))block;
+- (void) agendaForEvent:(NSString *) eventId completion:(void(^)(BOOL succeed, NSDictionary *result))block;
+- (void) panelistsForEvent:(NSString *) eventId completion:(void(^)(BOOL succeed, NSDictionary *result))block;
+- (void) passesForEvent:(NSString *) eventId completion:(void(^)(BOOL succeed, NSDictionary *result))block;
 
 - (void) ads:(void(^)(BOOL succeed, NSDictionary *result))block;
 - (void) adClicked:(NSString *) adId completion:(void(^)(BOOL succeed, NSDictionary *result))block;

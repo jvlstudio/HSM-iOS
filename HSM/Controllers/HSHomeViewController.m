@@ -31,7 +31,7 @@
 - (void) setConfigurations
 {
     // scroll
-    [scroll setContentSize:CGSizeMake(WINDOW_WIDTH, 540)];
+    [scroll setContentSize:CGSizeMake(WINDOW_WIDTH, 700)];
     // scroll display
     [scrollDisplay setPagingEnabled:YES];
     // page control

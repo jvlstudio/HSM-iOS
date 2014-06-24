@@ -76,4 +76,13 @@
 	}
 }
 
+#pragma mark - Methods
+
+- (UIView *) viewFromXIBAtIndex:(NSInteger) index
+{
+    NSArray *xib = [[NSBundle mainBundle] loadNibNamed:HS_APP_RESOURCES owner:nil options:nil];
+    UIView *view = [xib objectAtIndex:index];
+    return view;
+}
+
 @end

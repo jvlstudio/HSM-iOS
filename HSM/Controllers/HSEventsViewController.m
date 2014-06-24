@@ -42,6 +42,31 @@
 - (void) setConfigurations
 {
     rows = [[HSMaster local] events];
+    if ([rows count] == 0) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Carregando...";
+        [[HSMaster rest] events:^(BOOL succeed, NSDictionary *result) {
+            [hud hide:YES];
+            if (succeed) {
+                if (result != nil) {
+                    [[HSMaster local] saveEvents:[result objectForKey:@"data"]];
+                    rows = [[HSMaster local] nextEvents];
+                }
+            }
+        }];
+    }
+    else {
+        rows = [[HSMaster local] nextEvents];
+        // update in background
+        [[HSMaster rest] loadInBackground:YES];
+        [[HSMaster rest] events:^(BOOL succeed, NSDictionary *result) {
+            if (succeed) {
+                if (result != nil) {
+                    [[HSMaster local] saveEvents:[result objectForKey:@"data"]];
+                }
+            }
+        }];
+    }
 }
 
 #pragma mark - IBActions
@@ -91,7 +116,17 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    selectedEvent = (HSEvent *)[rows objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"segue_single" sender:self];
+}
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    HSEventSingleViewController *vc = (HSEventSingleViewController *) segue.destinationViewController;
+    vc.event = selectedEvent;
 }
 
 @end

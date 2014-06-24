@@ -12,6 +12,9 @@
 #import "HSEvent.h"
 #import "HSBook.h"
 #import "HSMagazine.h"
+#import "HSLecture.h"
+#import "HSPass.h"
+#import "HSPanelist.h"
 
 #pragma mark - Typedef
 
@@ -28,27 +31,36 @@ HSAdType;
 
 @interface HSLocalClient : NSObject
 
+@property (nonatomic, strong) UIView *hudView;
+
 #pragma mark -  Ads Methods
 
 - (BOOL) hasAdWithType:(HSAdType) type;
 - (void) setAdClickedInBackground:(HSAd *) advertising;
 - (void) setAdViewedInBackground:(HSAd *) advertising;
 
-#pragma mark - Events Methods
+#pragma mark - Content Methods
 
-- (void) saveEvents:(NSArray *) events;
+- (void) saveEvents:(NSArray *) data;
 - (NSArray *) events;
 - (NSArray *) nextEvents;
 - (NSArray *) previousEvents;
 - (HSEvent *) eventForId:(NSString *) eventId;
 
-#pragma mark - Books Methods
-
+- (void) saveBooks:(NSArray *) data;
 - (NSArray *) books;
 - (HSBook *) bookForId:(NSString *) bookId;
 
-#pragma mark - Magazines Methods
-
+- (void) saveMagazines:(NSArray *) data;
 - (NSArray *) magazines;
+
+- (void) saveAgenda:(NSArray *) data forEvent:(NSString *) eventId;
+- (NSArray *) agendaForEvent:(NSString *) eventId;
+
+- (void) savePanelists:(NSArray *) data forEvent:(NSString *) eventId;
+- (NSArray *) panelistsForEvent:(NSString *) eventId;
+
+- (void) savePasses:(NSArray *) data forEvent:(NSString *) eventId;
+- (NSArray *) passesForEvent:(NSString *) eventId;
 
 @end

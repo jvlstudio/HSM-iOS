@@ -28,6 +28,30 @@
 - (void) setConfigurations
 {
     rows = [[HSMaster local] magazines];
+    if ([rows count] == 0) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Carregando...";
+        [[HSMaster rest] magazines:^(BOOL succeed, NSDictionary *result) {
+            [hud hide:YES];
+            if (succeed) {
+                if (result != nil) {
+                    [[HSMaster local] saveMagazines:[result objectForKey:@"data"]];
+                    rows = [[HSMaster local] magazines];
+                }
+            }
+        }];
+    }
+    else {
+        // update in background
+        [[HSMaster rest] loadInBackground:YES];
+        [[HSMaster rest] magazines:^(BOOL succeed, NSDictionary *result) {
+            if (succeed) {
+                if (result != nil) {
+                    [[HSMaster local] saveMagazines:[result objectForKey:@"data"]];
+                }
+            }
+        }];
+    }
 }
 
 #pragma mark - Table view data source

@@ -14,6 +14,8 @@
 
 @implementation HSAgendaViewController
 
+@synthesize event;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];

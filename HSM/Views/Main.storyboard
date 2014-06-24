@@ -72,7 +72,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyL-7t-hAE">
                                                 <rect key="frame" x="0.0" y="-15" width="320" height="200"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" backgroundImage="home_feat.png">
+                                                <state key="normal" backgroundImage="home_feat.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -357,6 +357,7 @@
                 <navigationController definesPresentationContext="YES" id="69W-aH-8dK" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="reo-wO-heh">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.96862751250000001" green="0.82745105029999999" blue="0.1764705926" alpha="1" colorSpace="deviceRGB"/>
                         <color key="barTintColor" red="0.13333334029999999" green="0.1294117719" blue="0.180392161" alpha="1" colorSpace="deviceRGB"/>
                     </navigationBar>
                     <connections>
@@ -505,7 +506,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Meu Cartão" id="dF8-tY-L00"/>
+                    <navigationItem key="navigationItem" title="Meu Cartão" id="dF8-tY-L00">
+                        <barButtonItem key="leftBarButtonItem" image="btbar_close.png" id="Xo8-Vh-Crx"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="butCreate" destination="S6s-74-XwB" id="naX-2X-NP7"/>
                         <outlet property="contentView" destination="9ew-y3-mQF" id="uWL-Uu-k3T"/>
@@ -1183,6 +1186,7 @@
         <image name="bt_tiny.png" width="100" height="29"/>
         <image name="bt_tiny_clear.png" width="153" height="44"/>
         <image name="btbar_back.png" width="25" height="25"/>
+        <image name="btbar_close.png" width="25" height="25"/>
         <image name="btbar_scan.png" width="25" height="25"/>
         <image name="but_plus.png" width="38" height="38"/>
         <image name="cell_event_wrapper.png" width="320" height="38"/>

@@ -264,6 +264,10 @@
 		4AB13785194F940C00CD60AD /* HSMagazineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB13784194F940C00CD60AD /* HSMagazineCell.m */; };
 		4AB13788194F941700CD60AD /* HSMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB13787194F941700CD60AD /* HSMoreCell.m */; };
 		4AB1378C194F94F800CD60AD /* HSPassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB1378B194F94F700CD60AD /* HSPassCell.m */; };
+		4AF04CC7195A121D00EDA68F /* HS-Agenda.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AF04CC6195A121D00EDA68F /* HS-Agenda.plist */; };
+		4AF04CC9195A122A00EDA68F /* HS-Passes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AF04CC8195A122A00EDA68F /* HS-Passes.plist */; };
+		4AF04CCB195A123400EDA68F /* HS-Panelists.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AF04CCA195A123400EDA68F /* HS-Panelists.plist */; };
+		4AF04CCD195A373800EDA68F /* btbar_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF04CCC195A373800EDA68F /* btbar_close@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -625,6 +629,10 @@
 		4AB13787194F941700CD60AD /* HSMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSMoreCell.m; path = Cells/HSMoreCell.m; sourceTree = "<group>"; };
 		4AB1378A194F94F700CD60AD /* HSPassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassCell.h; path = Cells/HSPassCell.h; sourceTree = "<group>"; };
 		4AB1378B194F94F700CD60AD /* HSPassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassCell.m; path = Cells/HSPassCell.m; sourceTree = "<group>"; };
+		4AF04CC6195A121D00EDA68F /* HS-Agenda.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Agenda.plist"; sourceTree = "<group>"; };
+		4AF04CC8195A122A00EDA68F /* HS-Passes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Passes.plist"; sourceTree = "<group>"; };
+		4AF04CCA195A123400EDA68F /* HS-Panelists.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Panelists.plist"; sourceTree = "<group>"; };
+		4AF04CCC195A373800EDA68F /* btbar_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btbar_close@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -696,6 +704,7 @@
 				4A2C5F6F19506DAF00F5309F /* bt_tiny@2x.png */,
 				4A2C5F7019506DAF00F5309F /* bt_tiny_clear@2x.png */,
 				4A2C5F7119506DAF00F5309F /* btbar_back@2x.png */,
+				4AF04CCC195A373800EDA68F /* btbar_close@2x.png */,
 				4A2C5F7219506DAF00F5309F /* btbar_empty@2x.png */,
 				4A2C5F7319506DAF00F5309F /* btbar_menu@2x.png */,
 				4A2C5F7419506DAF00F5309F /* btbar_scan@2x.png */,
@@ -828,10 +837,13 @@
 			isa = PBXGroup;
 			children = (
 				4A3406B8194F995300347815 /* HS-Ads.plist */,
-				4A3406BA194F995B00347815 /* HS-Events.plist */,
+				4AF04CC6195A121D00EDA68F /* HS-Agenda.plist */,
 				4A9A6AEF1954BF79004F1BE7 /* HS-Books.plist */,
+				4A3406BA194F995B00347815 /* HS-Events.plist */,
 				4A9A6AF91954CFD2004F1BE7 /* HS-Magazines.plist */,
 				4A9A6B2A1954D6F6004F1BE7 /* HS-Network.plist */,
+				4AF04CCA195A123400EDA68F /* HS-Panelists.plist */,
+				4AF04CC8195A122A00EDA68F /* HS-Passes.plist */,
 			);
 			path = plists;
 			sourceTree = "<group>";
@@ -1689,12 +1701,14 @@
 				4A674AC919523EC30048376C /* panelist_noimage_2@2x.png in Resources */,
 				4A2C5FD819506DAF00F5309F /* cell_event_wrapper@2x.png in Resources */,
 				4A674AC019523BC50048376C /* id_plus2@2x.png in Resources */,
+				4AF04CC7195A121D00EDA68F /* HS-Agenda.plist in Resources */,
 				4A2C5FC319506DAF00F5309F /* mag_jul-ago_13@2x.png in Resources */,
 				4A2C5FF419506DAF00F5309F /* icon_settings@2x.png in Resources */,
 				4A2C5FCF19506DAF00F5309F /* btbar_back@2x.png in Resources */,
 				4A674AAC19523BC50048376C /* p_philip_kotler_large@2x.png in Resources */,
 				4A2C5FC619506DAF00F5309F /* mag_set-out_13.png in Resources */,
 				4A674A9A19523BC50048376C /* p_douglas_stone_large@2x.png in Resources */,
+				4AF04CCD195A373800EDA68F /* btbar_close@2x.png in Resources */,
 				4A2C5FDC19506DAF00F5309F /* cell_menu_soon@2x.png in Resources */,
 				4A674ABD19523BC50048376C /* ball_red@2x.png in Resources */,
 				4A674AAF19523BC50048376C /* p_robert_lloyd_large@2x.png in Resources */,
@@ -1752,6 +1766,7 @@
 				4A674ABF19523BC50048376C /* id_plus@2x.png in Resources */,
 				4A2C5FF319506DAF00F5309F /* icon_news_s@2x.png in Resources */,
 				4A674AAE19523BC50048376C /* p_ricardo_jose_de_almeida_large@2x.png in Resources */,
+				4AF04CCB195A123400EDA68F /* HS-Panelists.plist in Resources */,
 				4A2C5FF119506DAF00F5309F /* icon_network_s@2x.png in Resources */,
 				4A2C5FCC19506DAF00F5309F /* bt_large_purple@2x.png in Resources */,
 				4A674AA119523BC50048376C /* p_jeremy_rifkin_large@2x.png in Resources */,
@@ -1786,6 +1801,7 @@
 				4A674AA419523BC50048376C /* p_luiz_carlos_cabrera_large@2x.png in Resources */,
 				4A2C5FE119506DAF00F5309F /* home_books@2x.png in Resources */,
 				4A674AB819523BC50048376C /* agenda_id_credential@2x.png in Resources */,
+				4AF04CC9195A122A00EDA68F /* HS-Passes.plist in Resources */,
 				4A2C5FFE19506DAF00F5309F /* navbar_2@2x.png in Resources */,
 				4A2C5FD419506DAF00F5309F /* cell_agenda@2x.png in Resources */,
 				4A2C5FE619506DAF00F5309F /* icon_books@2x.png in Resources */,

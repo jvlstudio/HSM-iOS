@@ -16,4 +16,33 @@
 @synthesize date;
 @synthesize hourStart, hourEnd;
 
+#pragma mark - Methods
+
++ (HSLectureType) typeForLabel:(NSString *) label
+{
+    HSLectureType lectureType;
+    if ([label isEqualToString:@"speech"])
+        lectureType = kTypeLecture;
+    else if ([label isEqualToString:@"break"])
+        lectureType = kTypePause;
+    else if ([label isEqualToString:@"session"])
+        lectureType = kTypePromotion;
+    
+    return lectureType;
+}
++ (NSDate *)dateWithValue:(NSString *)value
+{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"dd/MM/yyyy"];
+    NSDate *date = [df dateFromString:value];
+    return date;
+}
++ (NSDate *)hourWithValue:(NSString *)value
+{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [df dateFromString:value];
+    return date;
+}
+
 @end

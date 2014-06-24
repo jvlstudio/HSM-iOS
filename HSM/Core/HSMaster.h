@@ -26,4 +26,8 @@
 @property (nonatomic, strong) NSDateFormatter *stringConverter;
 @property (nonatomic, strong) NSDateFormatter *humamFormatter;
 
+#pragma mark - Methods
+
+- (UIView *) viewFromXIBAtIndex:(NSInteger) index;
+
 @end

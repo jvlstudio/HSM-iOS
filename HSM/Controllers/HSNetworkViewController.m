@@ -56,10 +56,7 @@
 
 - (IBAction) pressCreate:(UIButton *)sender
 {
-    /*
-    NetworkSign *vc = [[NetworkSign alloc] initWithNibName:NIB_NETWORK_SIGN bundle:nil];
-    UINavigationController *n = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:n animated:YES completion:nil];*/
+    [self performSegueWithIdentifier:@"segue_sign" sender:self];
 }
 - (IBAction) pressSelf:(UIButton *)sender
 {
@@ -110,7 +107,7 @@
     
     [[cell labName] setFont:[UIFont fontWithName:FONT_REGULAR size:cell.labName.font.pointSize]];
     
-    NSString *strColor  = [NSString stringWithFormat:@"hsm_ball_%@.png", contact.barcolor];
+    NSString *strColor  = [NSString stringWithFormat:@"ball_%@.png", contact.barcolor];
     [[cell imgColor] setImage:[UIImage imageNamed:strColor]];
     
     if ([[HSMaster network] hasContactBeenAdd:contact])
@@ -149,7 +146,8 @@
     
     // data..
     zBarSymbolData = symbol.data;
-    NSLog(@"%@", zBarSymbolData);
+    NSLog(@"[HS_NETWORK] ------");
+    NSLog(@"[HS_NETWORK] zbar data: %@", zBarSymbolData);
     
     if([[HSMaster network] isValidQRCode:zBarSymbolData])
     {

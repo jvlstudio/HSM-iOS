@@ -24,6 +24,9 @@
 #define HS_PLIST_BOOKS              @"HS-Books"
 #define HS_PLIST_MAGAZINES          @"HS-Magazines"
 #define HS_PLIST_NETWORK            @"HS-Network"
+#define HS_PLIST_PASSES             @"HS-Passes"
+#define HS_PLIST_PANELISTS          @"HS-Panelists"
+#define HS_PLIST_AGENDA             @"HS-Agenda"
 
 // third-part app ids
 #define HS_PUBLIC_TOKEN				@"4fc5c9fda3dc404c65c9f6167a3da62c"

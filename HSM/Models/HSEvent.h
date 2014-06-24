@@ -17,6 +17,7 @@
     NSString *largeDescription;
     NSString *local;
     NSArray *dates; // array of NSDate
+    NSString *hours;
 }
 
 @property (nonatomic, strong) NSString *uniqueId;
@@ -26,5 +27,10 @@
 @property (nonatomic, strong) NSString *largeDescription;
 @property (nonatomic, strong) NSString *local;
 @property (nonatomic, strong) NSArray *dates;
+@property (nonatomic, strong) NSString *hours;
+
+#pragma mark - Methods
+
++ (HSEvent *) simpleEventWithDictionary:(NSDictionary *) dict;
 
 @end

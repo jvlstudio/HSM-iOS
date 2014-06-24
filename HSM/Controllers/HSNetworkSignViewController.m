@@ -7,6 +7,7 @@
 //
 
 #import "HSNetworkSignViewController.h"
+#import "HSContact.h"
 
 @interface HSNetworkSignViewController ()
 
@@ -63,50 +64,44 @@
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [scroll setContentOffset:currentOffset];
-    [scroll setContentSize:CGSizeMake(scroll.contentSize.width, scroll.contentSize.height+KEYBOARD_HEIGHT)];
+    //[scroll setContentSize:CGSizeMake(scroll.contentSize.width, scroll.contentSize.height+KEYBOARD_HEIGHT)];
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    [scroll setContentSize:CGSizeMake(scroll.contentSize.width, scroll.contentSize.height-KEYBOARD_HEIGHT)];
+    //[scroll setContentSize:CGSizeMake(scroll.contentSize.width, scroll.contentSize.height-KEYBOARD_HEIGHT)];
 }
 
 #pragma mark - UIActionSheetDelegate Methods
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    PassColor colorPass = buttonIndex;
-    NSMutableDictionary *mdict = [NSMutableDictionary dictionary];
+    HSPassColor colorPass = buttonIndex;
+    HSContact *myContact = [HSContact new];
+    myContact.name = tfName.text;
+    myContact.email = tfEmail.text;
+    myContact.phone = tfPhone.text;
+    myContact.mobile = tfMobile.text;
+    myContact.company = tfCompany.text;
+    myContact.role = tfRole.text;
+    myContact.website = tfWebsite.text;
     
-    [mdict setObject:[tfName text] forKey:KEY_NAME];
-    [mdict setObject:[tfEmail text] forKey:KEY_EMAIL];
-    [mdict setObject:[tfPhone text] forKey:KEY_PHONE];
-    [mdict setObject:[tfMobile text] forKey:KEY_MOBILE];
-    [mdict setObject:[tfCompany text] forKey:KEY_COMPANY];
-    [mdict setObject:[tfRole text] forKey:KEY_ROLE];
-    [mdict setObject:[tfWebsite text] forKey:KEY_WEBSITE];
-    
-    // ..
     switch (colorPass)
     {
-        case kPassColorGreen:
-        {
-            [mdict setObject:KEY_PASS_GREEN forKey:KEY_BARCOLOR];
-        }
+        // green
+        case kColorGreen:
+            myContact.barcolor = @"green";
             break;
-        case kPassColorGold:
-        {
-            [mdict setObject:KEY_PASS_GOLD forKey:KEY_BARCOLOR];
-        }
+        // gold
+        case kColorGold:
+            myContact.barcolor = @"gold";
             break;
-        case kPassColorRed:
-        {
-            [mdict setObject:KEY_PASS_RED forKey:KEY_BARCOLOR];
-        }
+        // red
+        case kColorRed:
+            myContact.barcolor = @"red";
             break;
     }
     
-    // ..
-    [self setSelfCard:[mdict copy]];
+    [[HSMaster network] setSelfCard:myContact];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

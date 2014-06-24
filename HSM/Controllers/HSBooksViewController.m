@@ -30,7 +30,32 @@
 - (void) setConfigurations
 {
     rows = [[HSMaster local] books];
+    if ([rows count] == 0) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Carregando...";
+        [[HSMaster rest] books:^(BOOL succeed, NSDictionary *result) {
+            [hud hide:YES];
+            if (succeed) {
+                if (result != nil) {
+                    [[HSMaster local] saveBooks:[result objectForKey:@"data"]];
+                    rows = [[HSMaster local] books];
+                }
+            }
+        }];
+    }
+    else {
+        // update in background
+        [[HSMaster rest] loadInBackground:YES];
+        [[HSMaster rest] books:^(BOOL succeed, NSDictionary *result) {
+            if (succeed) {
+                if (result != nil) {
+                    [[HSMaster local] saveBooks:[result objectForKey:@"data"]];
+                }
+            }
+        }];
+    }
 }
+
 #pragma mark - Methods
 
 - (HSBook *) book

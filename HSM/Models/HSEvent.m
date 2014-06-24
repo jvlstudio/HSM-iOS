@@ -14,6 +14,19 @@
 @synthesize name, slug;
 @synthesize shortDescription, largeDescription;
 @synthesize local;
-@synthesize dates;
+@synthesize dates, hours;
+
+#pragma mark - Methods
+
++ (HSEvent *) simpleEventWithDictionary:(NSDictionary *) dict
+{
+    HSEvent *event  = [HSEvent new];
+    
+    event.uniqueId  = [dict objectForKey:@"id"];
+    event.name      = [dict objectForKey:@"name"];
+    event.slug      = [dict objectForKey:@"slug"];
+    
+    return event;
+}
 
 @end

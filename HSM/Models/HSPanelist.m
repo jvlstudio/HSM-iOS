@@ -13,6 +13,6 @@
 @synthesize uniqueId;
 @synthesize name, slug;
 @synthesize description;
-@synthesize lectureTitle, lectureDescription;
+@synthesize pictureURL;
 
 @end

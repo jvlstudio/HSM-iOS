@@ -52,6 +52,30 @@
     NSURL *url = [NSURL URLWithString:stringURL];
     [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
 }
+// agenda (event)
+- (void) agendaForEvent:(NSString *) eventId completion:(void(^)(BOOL succeed, NSDictionary *result))block
+{
+    NSString *stringURL = [NSString stringWithFormat:@"%@/agenda.php?event=%@", HS_REST_SOURCE, eventId];
+    // request..
+    NSURL *url = [NSURL URLWithString:stringURL];
+    [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
+}
+// panelists (event)
+- (void) panelistsForEvent:(NSString *) eventId completion:(void(^)(BOOL succeed, NSDictionary *result))block
+{
+    NSString *stringURL = [NSString stringWithFormat:@"%@/panelists.php?event=%@", HS_REST_SOURCE, eventId];
+    // request..
+    NSURL *url = [NSURL URLWithString:stringURL];
+    [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
+}
+// passes (event)
+- (void) passesForEvent:(NSString *) eventId completion:(void(^)(BOOL succeed, NSDictionary *result))block
+{
+    NSString *stringURL = [NSString stringWithFormat:@"%@/passes.php?event=%@", HS_REST_SOURCE, eventId];
+    // request..
+    NSURL *url = [NSURL URLWithString:stringURL];
+    [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
+}
 
 // ads..
 - (void) ads:(void(^)(BOOL succeed, NSDictionary *result))block
@@ -82,6 +106,7 @@
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:120.0];
     [request setHTTPMethod:[HS_HTTP_METHODS objectAtIndex:method]];
+    NSLog(@"[HS_REST] --------");
 	NSLog(@"[HS_REST] > request url: %@", url.relativeString);
 	
     // parameters..

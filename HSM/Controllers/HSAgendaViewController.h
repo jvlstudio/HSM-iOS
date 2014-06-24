@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HSEvent.h"
 
 @interface HSAgendaViewController : UITableViewController
+{
+    HSEvent *event;
+}
+
+@property (nonatomic, strong) HSEvent *event;
 
 @end

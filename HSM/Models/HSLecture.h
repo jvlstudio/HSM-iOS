@@ -17,6 +17,7 @@ typedef enum HSLectureType : NSInteger
     kTypePromotion  = 2
 }
 HSLectureType;
+#define HS_LECTURE_TYPE_LABELS  @[ @"speech", @"break", @"session" ]
 
 #pragma mark - Interface
 
@@ -38,5 +39,11 @@ HSLectureType;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSDate *hourStart;
 @property (nonatomic, strong) NSDate *hourEnd;
+
+#pragma mark - Methods
+
++ (HSLectureType) typeForLabel:(NSString *) label;
++ (NSDate *) dateWithValue:(NSString *) value;
++ (NSDate *) hourWithValue:(NSString *) value;
 
 @end

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HSEvent.h"
 
 @interface HSEventsViewController : UITableViewController
 {
     NSArray *rows;
+    HSEvent *selectedEvent;
     IBOutlet UISegmentedControl *segment;
 }
 
