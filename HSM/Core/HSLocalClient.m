@@ -66,8 +66,9 @@
         object.shortDescription = [dict objectForKey:@"tiny_description"];
         object.largeDescription = [dict objectForKey:@"description"];
         object.local = [dict objectForKey:@"locale"];
-        //object.dates = [dict objectForKey:@"dates"];
         object.hours = [dict objectForKey:@"hours"];
+        object.dates = [HSEvent dateArrayFromRESTObject:[dict objectForKey:@"dates"]];
+        object.datePretty = [dict objectForKey:@"date_pretty"];
         
         [newData addObject:object];
     }
@@ -76,23 +77,42 @@
 }
 - (NSArray*) nextEvents
 {
-    NSArray *events = [[HSMaster tools] propertyListRead:HS_PLIST_EVENTS];
+    NSArray *events = [self events];
     NSMutableArray *selected = [NSMutableArray array];
     
-    for (NSDictionary *dict in events)
-        if ([[dict objectForKey:@"did_happen"] isEqualToString:@"no"])
-            [selected addObject:dict];
+    NSDate *today = [NSDate date];
+    for (HSEvent *event in events){
+        BOOL canAdd = NO;
+        for (NSDate *date in event.dates) {
+            if ([today compare:date] == NSOrderedSame
+            ||  [today compare:date] == NSOrderedAscending){
+                canAdd = YES;
+                break;
+            }
+        }
+        if (canAdd)
+            [selected addObject:event];
+    }
     
     return [selected copy];
 }
 - (NSArray*) previousEvents
 {
-    NSArray *events = [[HSMaster tools] propertyListRead:HS_PLIST_EVENTS];
+    NSArray *events = [self events];
     NSMutableArray *selected = [NSMutableArray array];
     
-    for (NSDictionary *dict in events)
-        if ([[dict objectForKey:@"did_happen"] isEqualToString:@"yes"])
-            [selected addObject:dict];
+    NSDate *today = [NSDate date];
+    for (HSEvent *event in events){
+        BOOL canAdd = NO;
+        for (NSDate *date in event.dates) {
+            if ([today compare:date] == NSOrderedDescending){
+                canAdd = YES;
+                break;
+            }
+        }
+        if (canAdd)
+            [selected addObject:event];
+    }
     
     return [selected copy];
 }
@@ -105,6 +125,18 @@
             event = eventSingle;
     
     return event;
+}
+- (BOOL) eventDidHappen:(HSEvent *) event
+{
+    NSDate *today = [NSDate date];
+    BOOL canAdd = NO;
+    for (NSDate *date in event.dates) {
+        if ([today compare:date] == NSOrderedDescending){
+            canAdd = YES;
+            break;
+        }
+    }
+    return canAdd;
 }
 
 // books
@@ -206,6 +238,22 @@
     }
     
     return newData;
+}
+- (NSMutableArray *) agenda:(NSArray *) agenda splitedByDays:(HSEvent *) event
+{
+    // for each day...
+    NSMutableArray *splitedArray = [NSMutableArray array];
+    for (NSDate *date in event.dates) {
+        NSMutableArray *agendaArray = [NSMutableArray array];
+        // search at agenda array..
+        for (HSLecture *lecture in agenda) {
+            if ([lecture.date compare:date] == NSOrderedSame) {
+                [agendaArray addObject:lecture];
+            }
+        }
+        [splitedArray addObject:agendaArray];
+    }
+    return [splitedArray copy];
 }
 
 // panelist

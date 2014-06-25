@@ -7,6 +7,7 @@
 //
 
 #import "HSEvent.h"
+#import "HSPanelist.h"
 
 #pragma mark - Typedef
 
@@ -25,8 +26,11 @@ HSLectureType;
 {
     HSLectureType type;
     HSEvent *event;
+    HSPanelist *panelist;
+    
     NSString *title;
     NSString *subtitle;
+    NSString *text;
     NSDate *date;
     NSDate *hourStart;
     NSDate *hourEnd;
@@ -34,8 +38,10 @@ HSLectureType;
 
 @property (nonatomic) HSLectureType type;
 @property (nonatomic, strong) HSEvent *event;
+@property (nonatomic, strong) HSPanelist *panelist;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *subtitle;
+@property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSDate *hourStart;
 @property (nonatomic, strong) NSDate *hourEnd;

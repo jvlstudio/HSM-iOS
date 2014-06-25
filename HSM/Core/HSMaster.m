@@ -57,6 +57,15 @@
 		return local;
 	}
 }
++ (HSEventManager *) events {
+	static HSEventManager* events;
+	@synchronized(self){
+		if(!events){
+			events = [HSEventManager new];
+		}
+		return events;
+	}
+}
 + (HSNetworkManager *) network {
 	static HSNetworkManager* network;
 	@synchronized(self){
@@ -78,7 +87,7 @@
 
 #pragma mark - Methods
 
-- (UIView *) viewFromXIBAtIndex:(NSInteger) index
+- (UIView *) resourceAtIndex:(HSREsourceIndex) index
 {
     NSArray *xib = [[NSBundle mainBundle] loadNibNamed:HS_APP_RESOURCES owner:nil options:nil];
     UIView *view = [xib objectAtIndex:index];

@@ -8,12 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "HSEvent.h"
+#import "HSLecture.h"
 
 @interface HSAgendaViewController : UITableViewController
 {
     HSEvent *event;
+    
+    NSArray *rows;
+    NSArray *agendaDays;
+    NSMutableArray *scheduleDays;
+    
+    IBOutlet UISegmentedControl* segment;
 }
 
 @property (nonatomic, strong) HSEvent *event;
+
+#pragma mark - IBActions
+
+- (IBAction) segmentChanged:(UISegmentedControl*)sender;
+- (IBAction) pressBack:(UIBarButtonItem *)sender;
 
 @end

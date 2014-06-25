@@ -107,7 +107,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:120.0];
     [request setHTTPMethod:[HS_HTTP_METHODS objectAtIndex:method]];
     NSLog(@"[HS_REST] --------");
-	NSLog(@"[HS_REST] > request url: %@", url.relativeString);
+	NSLog(@"[HS_REST] request url: %@", url.relativeString);
 	
     // parameters..
     if (parameters != nil) {
@@ -115,7 +115,7 @@
         for (NSString *value in parameters) {
             urlParameters = [urlParameters stringByAppendingString:[NSString stringWithFormat:@"&%@=%@", value ,value]];
         }
-		NSLog(@"[HS_REST] > request parameters: %@", urlParameters);
+		NSLog(@"[HS_REST] request parameters: %@", urlParameters);
         [request setHTTPBody:[urlParameters dataUsingEncoding:NSUTF8StringEncoding]];
     }
     
@@ -134,12 +134,13 @@
 								  JSONObjectWithData: data
 								  options: NSJSONReadingMutableContainers
 								  error: &e];
-            int wasSucceed = [[JSON objectForKey:@"succees"] intValue];
+            int wasSucceed = [[JSON objectForKey:@"success"] intValue];
             if (wasSucceed > 0) {
                 NSLog(@"[HS_REST] succeed!");
                 block(YES, JSON);
             }
             else {
+                NSLog(@"[HS_REST] the JSON wasnt succeed");
                 NSDictionary *dict = nil;
                 NSString *message = [[JSON objectForKey:@"meta"] objectForKey:@"message"];
                 if (message)

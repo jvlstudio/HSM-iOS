@@ -11,8 +11,8 @@
 @implementation HSLecture
 
 @synthesize type;
-@synthesize event;
-@synthesize title, subtitle;
+@synthesize event, panelist;
+@synthesize title, subtitle, text;
 @synthesize date;
 @synthesize hourStart, hourEnd;
 

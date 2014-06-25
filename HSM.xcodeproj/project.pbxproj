@@ -126,6 +126,12 @@
 		4A3406B9194F995300347815 /* HS-Ads.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A3406B8194F995300347815 /* HS-Ads.plist */; };
 		4A3406BB194F995B00347815 /* HS-Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A3406BA194F995B00347815 /* HS-Events.plist */; };
 		4A3406BF194F9AD000347815 /* HSLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3406BE194F9AD000347815 /* HSLecture.m */; };
+		4A616DC3195AF01600D271A0 /* HSAgendaPauseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A616DC2195AF01600D271A0 /* HSAgendaPauseCell.m */; };
+		4A616DC7195B098200D271A0 /* HSEventSingleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A616DC6195B098200D271A0 /* HSEventSingleContentView.m */; };
+		4A616DCA195B099600D271A0 /* HSEventSingleFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A616DC9195B099600D271A0 /* HSEventSingleFooterView.m */; };
+		4A616DCD195B09B400D271A0 /* HSEventSingleInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A616DCC195B09B400D271A0 /* HSEventSingleInfoView.m */; };
+		4A616DD3195B0BF900D271A0 /* HSEventSingleTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A616DD2195B0BF900D271A0 /* HSEventSingleTextView.m */; };
+		4A616DD7195B1A4B00D271A0 /* HSEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A616DD6195B1A4B00D271A0 /* HSEventManager.m */; };
 		4A674A5919521CAE0048376C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A674A5819521CAE0048376C /* Crashlytics.framework */; };
 		4A674A9119523BC50048376C /* p_andrew_mcafee_large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A674A5B19523BC50048376C /* p_andrew_mcafee_large@2x.png */; };
 		4A674A9219523BC50048376C /* p_aswath_damodaran_large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A674A5C19523BC50048376C /* p_aswath_damodaran_large@2x.png */; };
@@ -401,6 +407,18 @@
 		4A3406BA194F995B00347815 /* HS-Events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Events.plist"; sourceTree = "<group>"; };
 		4A3406BD194F9AD000347815 /* HSLecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLecture.h; sourceTree = "<group>"; };
 		4A3406BE194F9AD000347815 /* HSLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLecture.m; sourceTree = "<group>"; };
+		4A616DC1195AF01600D271A0 /* HSAgendaPauseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSAgendaPauseCell.h; path = Cells/HSAgendaPauseCell.h; sourceTree = "<group>"; };
+		4A616DC2195AF01600D271A0 /* HSAgendaPauseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSAgendaPauseCell.m; path = Cells/HSAgendaPauseCell.m; sourceTree = "<group>"; };
+		4A616DC5195B098200D271A0 /* HSEventSingleContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSEventSingleContentView.h; path = Resources/HSEventSingleContentView.h; sourceTree = "<group>"; };
+		4A616DC6195B098200D271A0 /* HSEventSingleContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSEventSingleContentView.m; path = Resources/HSEventSingleContentView.m; sourceTree = "<group>"; };
+		4A616DC8195B099600D271A0 /* HSEventSingleFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSEventSingleFooterView.h; path = Resources/HSEventSingleFooterView.h; sourceTree = "<group>"; };
+		4A616DC9195B099600D271A0 /* HSEventSingleFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSEventSingleFooterView.m; path = Resources/HSEventSingleFooterView.m; sourceTree = "<group>"; };
+		4A616DCB195B09B400D271A0 /* HSEventSingleInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSEventSingleInfoView.h; path = Resources/HSEventSingleInfoView.h; sourceTree = "<group>"; };
+		4A616DCC195B09B400D271A0 /* HSEventSingleInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSEventSingleInfoView.m; path = Resources/HSEventSingleInfoView.m; sourceTree = "<group>"; };
+		4A616DD1195B0BF900D271A0 /* HSEventSingleTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSEventSingleTextView.h; path = Resources/HSEventSingleTextView.h; sourceTree = "<group>"; };
+		4A616DD2195B0BF900D271A0 /* HSEventSingleTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSEventSingleTextView.m; path = Resources/HSEventSingleTextView.m; sourceTree = "<group>"; };
+		4A616DD5195B1A4B00D271A0 /* HSEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSEventManager.h; sourceTree = "<group>"; };
+		4A616DD6195B1A4B00D271A0 /* HSEventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSEventManager.m; sourceTree = "<group>"; };
 		4A674A5819521CAE0048376C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
 		4A674A5B19523BC50048376C /* p_andrew_mcafee_large@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p_andrew_mcafee_large@2x.png"; sourceTree = "<group>"; };
 		4A674A5C19523BC50048376C /* p_aswath_damodaran_large@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p_aswath_damodaran_large@2x.png"; sourceTree = "<group>"; };
@@ -857,6 +875,30 @@
 			name = Lecture;
 			sourceTree = "<group>";
 		};
+		4A616DC4195B08B800D271A0 /* Single */ = {
+			isa = PBXGroup;
+			children = (
+				4A616DC5195B098200D271A0 /* HSEventSingleContentView.h */,
+				4A616DC6195B098200D271A0 /* HSEventSingleContentView.m */,
+				4A616DC8195B099600D271A0 /* HSEventSingleFooterView.h */,
+				4A616DC9195B099600D271A0 /* HSEventSingleFooterView.m */,
+				4A616DCB195B09B400D271A0 /* HSEventSingleInfoView.h */,
+				4A616DCC195B09B400D271A0 /* HSEventSingleInfoView.m */,
+				4A616DD1195B0BF900D271A0 /* HSEventSingleTextView.h */,
+				4A616DD2195B0BF900D271A0 /* HSEventSingleTextView.m */,
+			);
+			name = Single;
+			sourceTree = "<group>";
+		};
+		4A616DD4195B1A3800D271A0 /* Event Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4A616DD5195B1A4B00D271A0 /* HSEventManager.h */,
+				4A616DD6195B1A4B00D271A0 /* HSEventManager.m */,
+			);
+			name = "Event Manager";
+			sourceTree = "<group>";
+		};
 		4A674A5A19523BC50048376C /* _panelists */ = {
 			isa = PBXGroup;
 			children = (
@@ -1169,6 +1211,7 @@
 				4AB136B8194F847400CD60AD /* Analytics */,
 				4AB136B7194F847000CD60AD /* Rest */,
 				4A9A6AEB1954BDDA004F1BE7 /* Local */,
+				4A616DD4195B1A3800D271A0 /* Event Manager */,
 				4A9A6B241954D64E004F1BE7 /* Network Manager */,
 				4AB136B9194F847A00CD60AD /* Tools */,
 				4AB136AB194F845100CD60AD /* Supported Files */,
@@ -1503,6 +1546,7 @@
 			children = (
 				4AB13755194F87EF00CD60AD /* HSEventCell.h */,
 				4AB13756194F87EF00CD60AD /* HSEventCell.m */,
+				4A616DC4195B08B800D271A0 /* Single */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -1512,6 +1556,8 @@
 			children = (
 				4AB13759194F880100CD60AD /* HSAgendaCell.h */,
 				4AB1375A194F880100CD60AD /* HSAgendaCell.m */,
+				4A616DC1195AF01600D271A0 /* HSAgendaPauseCell.h */,
+				4A616DC2195AF01600D271A0 /* HSAgendaPauseCell.m */,
 			);
 			name = Agenda;
 			sourceTree = "<group>";
@@ -1907,6 +1953,7 @@
 				4AB13774194F916D00CD60AD /* HSMoreViewController.m in Sources */,
 				4AB13763194F882800CD60AD /* HSBookCell.m in Sources */,
 				4AB13788194F941700CD60AD /* HSMoreCell.m in Sources */,
+				4A616DCD195B09B400D271A0 /* HSEventSingleInfoView.m in Sources */,
 				4AB13736194F865A00CD60AD /* HSPassFormViewController.m in Sources */,
 				4AB136B5194F845100CD60AD /* main.m in Sources */,
 				4AB136FA194F84B700CD60AD /* SDWebImagePrefetcher.m in Sources */,
@@ -1915,11 +1962,14 @@
 				4AB136FC194F84B700CD60AD /* UIImageView+WebCache.m in Sources */,
 				4AB1376C194F914500CD60AD /* HSNetworkViewController.m in Sources */,
 				4AB1372E194F861200CD60AD /* HSPanelistsViewController.m in Sources */,
+				4A616DD3195B0BF900D271A0 /* HSEventSingleTextView.m in Sources */,
 				4A674AD3195240FB0048376C /* HSAdBannerFooter.m in Sources */,
+				4A616DC3195AF01600D271A0 /* HSAgendaPauseCell.m in Sources */,
 				4A817CD41958891A00208DFB /* HSNetworkSignViewController.m in Sources */,
 				4AB13752194F87C500CD60AD /* HSBook.m in Sources */,
 				4AB13728194F85DA00CD60AD /* HSEventsViewController.m in Sources */,
 				4AB13716194F856D00CD60AD /* HSPanelist.m in Sources */,
+				4A616DC7195B098200D271A0 /* HSEventSingleContentView.m in Sources */,
 				4AB13710194F855D00CD60AD /* HSEvent.m in Sources */,
 				4AB13743194F86CC00CD60AD /* HSBooksViewController.m in Sources */,
 				4AB1375B194F880100CD60AD /* HSAgendaCell.m in Sources */,
@@ -1930,6 +1980,7 @@
 				4AB1372B194F85E800CD60AD /* HSAgendaViewController.m in Sources */,
 				4A817CD119585F8E00208DFB /* MBProgressHUD.m in Sources */,
 				4AB13725194F85C900CD60AD /* HSHomeViewController.m in Sources */,
+				4A616DCA195B099600D271A0 /* HSEventSingleFooterView.m in Sources */,
 				4AB13703194F851900CD60AD /* HSAnalytics.m in Sources */,
 				4A9A6AF81954CE92004F1BE7 /* HSMagazine.m in Sources */,
 				4AB136F9194F84B700CD60AD /* SDWebImageManager.m in Sources */,
@@ -1937,6 +1988,7 @@
 				4AB13700194F850600CD60AD /* HSMaster.m in Sources */,
 				4AB136F7194F84B700CD60AD /* SDWebImageDecoder.m in Sources */,
 				4AB13778194F91BA00CD60AD /* HSAd.m in Sources */,
+				4A616DD7195B1A4B00D271A0 /* HSEventManager.m in Sources */,
 				4A674ADA195241220048376C /* HSAdBannerExpand.m in Sources */,
 				4A9A6B271954D663004F1BE7 /* HSNetworkManager.m in Sources */,
 				4AB136F5194F84B700CD60AD /* MKAnnotationView+WebCache.m in Sources */,

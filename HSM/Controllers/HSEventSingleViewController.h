@@ -7,13 +7,38 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "HSEvent.h"
+#import "HSEventSingleContentView.h"
+#import "HSEventSingleFooterView.h"
+#import "HSEventSingleInfoView.h"
+#import "HSEventSingleTextView.h"
 
 @interface HSEventSingleViewController : UIViewController
 {
     HSEvent *event;
+    
+    HSEventSingleContentView *contentView;
+    HSEventSingleFooterView *footerView;
+    HSEventSingleInfoView *infoView;
+    HSEventSingleTextView *textView;
+    
+    IBOutlet UIScrollView *scroll;
 }
 
 @property (nonatomic, strong) HSEvent *event;
+
+#pragma mark - IBActions
+
+- (IBAction) pressBack:(UIBarButtonItem *)sender;
+
+#pragma mark - Actions
+
+- (void) pressInfo:(UIButton *) sender;
+- (void) pressDates:(UIButton *) sender;
+
+- (void) pressAgenda:(UIButton *) sender;
+- (void) pressPanelists:(UIButton *) sender;
+- (void) pressPasses:(UIButton *) sender;
 
 @end

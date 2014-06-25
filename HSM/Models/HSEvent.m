@@ -15,6 +15,8 @@
 @synthesize shortDescription, largeDescription;
 @synthesize local;
 @synthesize dates, hours;
+@synthesize datePretty;
+@synthesize picture;
 
 #pragma mark - Methods
 
@@ -27,6 +29,17 @@
     event.slug      = [dict objectForKey:@"slug"];
     
     return event;
+}
++ (NSArray *) dateArrayFromRESTObject:(NSArray *) array
+{
+    NSMutableArray *newArray = [NSMutableArray array];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"dd/MM/yyyy"];
+    for (NSString *string in array) {
+        NSDate *date = [df dateFromString:string];
+        [newArray addObject:date];
+    }
+    return newArray;
 }
 
 @end

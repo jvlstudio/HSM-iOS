@@ -46,6 +46,7 @@ HSAdType;
 - (NSArray *) nextEvents;
 - (NSArray *) previousEvents;
 - (HSEvent *) eventForId:(NSString *) eventId;
+- (BOOL) eventDidHappen:(HSEvent *) event;
 
 - (void) saveBooks:(NSArray *) data;
 - (NSArray *) books;
@@ -56,6 +57,7 @@ HSAdType;
 
 - (void) saveAgenda:(NSArray *) data forEvent:(NSString *) eventId;
 - (NSArray *) agendaForEvent:(NSString *) eventId;
+- (NSMutableArray *) agenda:(NSArray *) agenda splitedByDays:(HSEvent *) event;
 
 - (void) savePanelists:(NSArray *) data forEvent:(NSString *) eventId;
 - (NSArray *) panelistsForEvent:(NSString *) eventId;

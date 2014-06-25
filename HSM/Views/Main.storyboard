@@ -184,7 +184,7 @@
                                     <rect key="frame" x="20" y="15" width="280" height="29"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <segments>
-                                        <segment title="Eventos 2014"/>
+                                        <segment title="Próximos Eventos"/>
                                         <segment title="Eventos anteriores"/>
                                     </segments>
                                     <color key="tintColor" red="0.50196078430000002" green="0.4941176471" blue="0.58039215690000001" alpha="1" colorSpace="deviceRGB"/>
@@ -249,7 +249,7 @@
                                     <outlet property="labLocal" destination="k1A-S4-XQv" id="ooH-A9-bXi"/>
                                     <outlet property="labSubtitle" destination="l9f-A5-Ab5" id="j0e-6Y-Srm"/>
                                     <outlet property="labTitle" destination="Q5M-xi-62R" id="9Bo-vq-6bP"/>
-                                    <segue destination="5S8-bY-yOM" kind="push" identifier="segue_single" id="98J-cs-tP3"/>
+                                    <segue destination="5S8-bY-yOM" kind="push" identifier="segue_single" id="a0R-n7-qlz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -288,6 +288,9 @@
                                         <segment title=""/>
                                     </segments>
                                     <color key="tintColor" red="0.50196078430000002" green="0.4941176471" blue="0.58039215690000001" alpha="1" colorSpace="deviceRGB"/>
+                                    <connections>
+                                        <action selector="segmentChanged:" destination="zKD-sE-nXo" eventType="valueChanged" id="Uam-tl-OwJ"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -301,15 +304,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="130" translatesAutoresizingMaskIntoConstraints="NO" id="dwk-7b-a7j" customClass="KDLabel">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="130" translatesAutoresizingMaskIntoConstraints="NO" id="dwk-7b-a7j">
                                             <rect key="frame" x="147" y="46" width="130" height="39"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.50196078430000002" green="0.4941176471" blue="0.58039215690000001" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00h00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRk-bE-5wC" customClass="KDLabel">
-                                            <rect key="frame" x="20" y="57" width="32" height="22"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00h00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRk-bE-5wC">
+                                            <rect key="frame" x="14" y="57" width="32" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.50196078430000002" green="0.4941176471" blue="0.58039215690000001" alpha="1" colorSpace="deviceRGB"/>
@@ -319,14 +322,14 @@
                                             <rect key="frame" x="61" y="19" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00h00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBd-uS-kdA" customClass="KDLabel">
-                                            <rect key="frame" x="20" y="45" width="33" height="22"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00h00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBd-uS-kdA">
+                                            <rect key="frame" x="14" y="45" width="33" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.50196078430000002" green="0.4941176471" blue="0.58039215690000001" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" preferredMaxLayoutWidth="154" translatesAutoresizingMaskIntoConstraints="NO" id="le4-Oc-ziV" customClass="KDLabel">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" preferredMaxLayoutWidth="154" translatesAutoresizingMaskIntoConstraints="NO" id="le4-Oc-ziV">
                                             <rect key="frame" x="132" y="11" width="154" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -336,6 +339,13 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="imgPicture" destination="hrX-VM-vEc" id="MiE-Zv-EoW"/>
+                                    <outlet property="labHourEnd" destination="fRk-bE-5wC" id="ZJT-pz-wwF"/>
+                                    <outlet property="labHourStart" destination="cBd-uS-kdA" id="599-EY-ZKe"/>
+                                    <outlet property="labSubtitle" destination="dwk-7b-a7j" id="ZaC-Qp-MUV"/>
+                                    <outlet property="labTitle" destination="le4-Oc-ziV" id="3Np-KV-gp6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -344,8 +354,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Agenda" id="fpm-cC-7eN">
-                        <barButtonItem key="leftBarButtonItem" image="btbar_back.png" id="1yj-I7-ba7"/>
+                        <barButtonItem key="leftBarButtonItem" image="btbar_back.png" id="1yj-I7-ba7">
+                            <connections>
+                                <action selector="pressBack:" destination="zKD-sE-nXo" id="pFg-Bg-Iur"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="segment" destination="Hux-IY-wx2" id="POE-mc-nXa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1D-IK-tug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -546,9 +564,16 @@
                         <color key="backgroundColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Evento" id="MRA-Kf-CzV">
-                        <barButtonItem key="leftBarButtonItem" image="btbar_back.png" id="6pr-vs-7aP"/>
+                        <barButtonItem key="leftBarButtonItem" image="btbar_back.png" id="6pr-vs-7aP">
+                            <connections>
+                                <action selector="pressBack:" destination="5S8-bY-yOM" id="X8c-sz-REk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <size key="freeformSize" width="320" height="800"/>
                     <connections>
+                        <outlet property="scroll" destination="RSr-ud-hct" id="02o-Zq-VWB"/>
                         <segue destination="zKD-sE-nXo" kind="push" identifier="segue_agenda" id="GtT-f8-DCb"/>
                     </connections>
                 </viewController>
