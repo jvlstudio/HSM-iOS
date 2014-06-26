@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface HSPanelistsViewController : UITableViewController
+{
+    HSEvent *event;
+    NSArray *rows;
+}
+
+@property (nonatomic, strong) HSEvent *event;
+
+#pragma mark - Actions
+
+- (void) pressBack:(UIBarButtonItem *) sender;
 
 @end

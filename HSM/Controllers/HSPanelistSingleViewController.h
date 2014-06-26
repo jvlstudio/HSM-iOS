@@ -29,6 +29,11 @@
 }
 
 @property (nonatomic, strong) HSLecture *lecture;
+@property (nonatomic, strong) HSPanelist *panelist;
+
+#pragma mark - Actions
+
+- (void) pressBack:(UIBarButtonItem *) sender;
 
 #pragma mark - IBActions
 

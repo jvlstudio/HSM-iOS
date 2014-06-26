@@ -24,7 +24,9 @@
 #define HS_PLIST_BOOKS              @"HS-Books"
 #define HS_PLIST_MAGAZINES          @"HS-Magazines"
 #define HS_PLIST_NETWORK            @"HS-Network"
-#define HS_PLIST_PASSES             @"HS-Passes"
+#define HS_PLIST_PASSES_MODEL       @"HS-Passes-Model"
+#define HS_PLIST_PASSES_VALUES      @"HS-Passes-Values"
+#define HS_PLIST_PASSES_COMPLETED   @"HS-Passes-Completed"
 #define HS_PLIST_PANELISTS          @"HS-Panelists"
 #define HS_PLIST_AGENDA             @"HS-Agenda"
 
@@ -62,5 +64,33 @@
 // keys / identifiers
 
 #define HS_CELL_IDENTIFIER          @"cell"
+
+// passes
+
+#define KEY_FORM_DATE               @"formDate"
+#define KEY_FORM_PARTICIPANT        @"formParticipant"
+#define KEY_FORM_PAYMENT            @"formPayment"
+
+#define CELL_PICKER                 @"passPickerCell"
+#define CELL_PICKER_PAYMENT         @"passPickerPaymentCell"
+#define CELL_FORM                   @"passFormCell"
+#define CELL_ADD                    @"passAddCell"
+#define CELL_EDIT                   @"passEditCell"
+
+#define TITLE_BG                    @"passes_title_%@.png"
+#define CELL_SUBTITLE_BG            @"passes_subtitle_%@.png"
+#define CELL_PICKER_BG              @"passes_field_picker.png"
+#define CELL_PICKER_PAYMENT_BG      @"passes_field_payment.png"
+#define CELL_FORM_BG                @"passes_field_form.png"
+#define CELL_ADD_BG                 @"passes_field_add.png"
+#define CELL_EDIT_BG                CELL_ADD_BG
+
+#define VALUES_TYPES                @[@"subtitle", @"pickerDate", @"pickerPayment", @"form", @"add", @"edit"]
+#define VALUES_PAYMENT              @[@"", @"Cartão de Crédito"]
+
+#define PICKER_WIDTH                WINDOW_WIDTH
+#define PICKER_HEIGHT               216
+#define RECT_PICKER_SHOW            CGRectMake(0, WINDOW_HEIGHT-PICKER_HEIGHT, PICKER_WIDTH, PICKER_HEIGHT)
+#define RECT_PICKER_HIDE            CGRectMake(0, WINDOW_HEIGHT, PICKER_WIDTH, PICKER_HEIGHT)
 
 #endif

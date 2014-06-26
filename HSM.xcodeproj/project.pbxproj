@@ -270,8 +270,21 @@
 		4AB13785194F940C00CD60AD /* HSMagazineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB13784194F940C00CD60AD /* HSMagazineCell.m */; };
 		4AB13788194F941700CD60AD /* HSMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB13787194F941700CD60AD /* HSMoreCell.m */; };
 		4AB1378C194F94F800CD60AD /* HSPassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB1378B194F94F700CD60AD /* HSPassCell.m */; };
+		4ACA28FC195CA0010015345C /* HSPassPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA28FB195CA0010015345C /* HSPassPickerView.m */; };
+		4ACA28FF195CA0290015345C /* HSPassHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA28FE195CA0290015345C /* HSPassHeaderView.m */; };
+		4ACA2902195CA0B50015345C /* HSPassFormSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA2901195CA0B50015345C /* HSPassFormSectionView.m */; };
+		4ACA2905195CA1030015345C /* HSPassFormPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA2904195CA1030015345C /* HSPassFormPickerCell.m */; };
+		4ACA2908195CA11C0015345C /* HSPassFormPickerPaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA2907195CA11C0015345C /* HSPassFormPickerPaymentCell.m */; };
+		4ACA290B195CA1350015345C /* HSPassFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA290A195CA1350015345C /* HSPassFormCell.m */; };
+		4ACA290E195CA14B0015345C /* HSPassFormAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA290D195CA14B0015345C /* HSPassFormAddCell.m */; };
+		4ACA2911195CA15C0015345C /* HSPassFormEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA2910195CA15C0015345C /* HSPassFormEditCell.m */; };
+		4ACA2915195CA5A00015345C /* HSPassFormAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA2914195CA5A00015345C /* HSPassFormAddViewController.m */; };
+		4ACA2917195CAB860015345C /* bt_remove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACA2916195CAB860015345C /* bt_remove@2x.png */; };
+		4ACA2919195CB01B0015345C /* HS-Passes-Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ACA2918195CB01B0015345C /* HS-Passes-Model.plist */; };
+		4ACA291C195CB4870015345C /* HS-Passes-Completed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ACA291A195CB4870015345C /* HS-Passes-Completed.plist */; };
+		4ACA291D195CB4870015345C /* HS-Passes-Values.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ACA291B195CB4870015345C /* HS-Passes-Values.plist */; };
+		4ACA2920195CB8120015345C /* HSPassButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA291F195CB8120015345C /* HSPassButton.m */; };
 		4AF04CC7195A121D00EDA68F /* HS-Agenda.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AF04CC6195A121D00EDA68F /* HS-Agenda.plist */; };
-		4AF04CC9195A122A00EDA68F /* HS-Passes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AF04CC8195A122A00EDA68F /* HS-Passes.plist */; };
 		4AF04CCB195A123400EDA68F /* HS-Panelists.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AF04CCA195A123400EDA68F /* HS-Panelists.plist */; };
 		4AF04CCD195A373800EDA68F /* btbar_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF04CCC195A373800EDA68F /* btbar_close@2x.png */; };
 /* End PBXBuildFile section */
@@ -647,8 +660,31 @@
 		4AB13787194F941700CD60AD /* HSMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSMoreCell.m; path = Cells/HSMoreCell.m; sourceTree = "<group>"; };
 		4AB1378A194F94F700CD60AD /* HSPassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassCell.h; path = Cells/HSPassCell.h; sourceTree = "<group>"; };
 		4AB1378B194F94F700CD60AD /* HSPassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassCell.m; path = Cells/HSPassCell.m; sourceTree = "<group>"; };
+		4ACA28FA195CA0010015345C /* HSPassPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassPickerView.h; path = Resources/HSPassPickerView.h; sourceTree = "<group>"; };
+		4ACA28FB195CA0010015345C /* HSPassPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassPickerView.m; path = Resources/HSPassPickerView.m; sourceTree = "<group>"; };
+		4ACA28FD195CA0290015345C /* HSPassHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassHeaderView.h; path = Resources/HSPassHeaderView.h; sourceTree = "<group>"; };
+		4ACA28FE195CA0290015345C /* HSPassHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassHeaderView.m; path = Resources/HSPassHeaderView.m; sourceTree = "<group>"; };
+		4ACA2900195CA0B50015345C /* HSPassFormSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassFormSectionView.h; path = Resources/HSPassFormSectionView.h; sourceTree = "<group>"; };
+		4ACA2901195CA0B50015345C /* HSPassFormSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassFormSectionView.m; path = Resources/HSPassFormSectionView.m; sourceTree = "<group>"; };
+		4ACA2903195CA1030015345C /* HSPassFormPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassFormPickerCell.h; path = Cells/HSPassFormPickerCell.h; sourceTree = "<group>"; };
+		4ACA2904195CA1030015345C /* HSPassFormPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassFormPickerCell.m; path = Cells/HSPassFormPickerCell.m; sourceTree = "<group>"; };
+		4ACA2906195CA11C0015345C /* HSPassFormPickerPaymentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassFormPickerPaymentCell.h; path = Cells/HSPassFormPickerPaymentCell.h; sourceTree = "<group>"; };
+		4ACA2907195CA11C0015345C /* HSPassFormPickerPaymentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassFormPickerPaymentCell.m; path = Cells/HSPassFormPickerPaymentCell.m; sourceTree = "<group>"; };
+		4ACA2909195CA1350015345C /* HSPassFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassFormCell.h; path = Cells/HSPassFormCell.h; sourceTree = "<group>"; };
+		4ACA290A195CA1350015345C /* HSPassFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassFormCell.m; path = Cells/HSPassFormCell.m; sourceTree = "<group>"; };
+		4ACA290C195CA14B0015345C /* HSPassFormAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassFormAddCell.h; path = Cells/HSPassFormAddCell.h; sourceTree = "<group>"; };
+		4ACA290D195CA14B0015345C /* HSPassFormAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassFormAddCell.m; path = Cells/HSPassFormAddCell.m; sourceTree = "<group>"; };
+		4ACA290F195CA15C0015345C /* HSPassFormEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassFormEditCell.h; path = Cells/HSPassFormEditCell.h; sourceTree = "<group>"; };
+		4ACA2910195CA15C0015345C /* HSPassFormEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassFormEditCell.m; path = Cells/HSPassFormEditCell.m; sourceTree = "<group>"; };
+		4ACA2913195CA5A00015345C /* HSPassFormAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPassFormAddViewController.h; sourceTree = "<group>"; };
+		4ACA2914195CA5A00015345C /* HSPassFormAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPassFormAddViewController.m; sourceTree = "<group>"; };
+		4ACA2916195CAB860015345C /* bt_remove@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt_remove@2x.png"; sourceTree = "<group>"; };
+		4ACA2918195CB01B0015345C /* HS-Passes-Model.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Passes-Model.plist"; sourceTree = "<group>"; };
+		4ACA291A195CB4870015345C /* HS-Passes-Completed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Passes-Completed.plist"; sourceTree = "<group>"; };
+		4ACA291B195CB4870015345C /* HS-Passes-Values.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Passes-Values.plist"; sourceTree = "<group>"; };
+		4ACA291E195CB8120015345C /* HSPassButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSPassButton.h; path = Resources/HSPassButton.h; sourceTree = "<group>"; };
+		4ACA291F195CB8120015345C /* HSPassButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSPassButton.m; path = Resources/HSPassButton.m; sourceTree = "<group>"; };
 		4AF04CC6195A121D00EDA68F /* HS-Agenda.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Agenda.plist"; sourceTree = "<group>"; };
-		4AF04CC8195A122A00EDA68F /* HS-Passes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Passes.plist"; sourceTree = "<group>"; };
 		4AF04CCA195A123400EDA68F /* HS-Panelists.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HS-Panelists.plist"; sourceTree = "<group>"; };
 		4AF04CCC195A373800EDA68F /* btbar_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btbar_close@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -719,6 +755,7 @@
 				4A674A8819523BC50048376C /* bt_large_blue@2x.png */,
 				4A2C5F6D19506DAF00F5309F /* bt_large_green@2x.png */,
 				4A2C5F6E19506DAF00F5309F /* bt_large_purple@2x.png */,
+				4ACA2916195CAB860015345C /* bt_remove@2x.png */,
 				4A2C5F6F19506DAF00F5309F /* bt_tiny@2x.png */,
 				4A2C5F7019506DAF00F5309F /* bt_tiny_clear@2x.png */,
 				4A2C5F7119506DAF00F5309F /* btbar_back@2x.png */,
@@ -861,7 +898,9 @@
 				4A9A6AF91954CFD2004F1BE7 /* HS-Magazines.plist */,
 				4A9A6B2A1954D6F6004F1BE7 /* HS-Network.plist */,
 				4AF04CCA195A123400EDA68F /* HS-Panelists.plist */,
-				4AF04CC8195A122A00EDA68F /* HS-Passes.plist */,
+				4ACA291A195CB4870015345C /* HS-Passes-Completed.plist */,
+				4ACA2918195CB01B0015345C /* HS-Passes-Model.plist */,
+				4ACA291B195CB4870015345C /* HS-Passes-Values.plist */,
 			);
 			path = plists;
 			sourceTree = "<group>";
@@ -1482,6 +1521,8 @@
 			children = (
 				4AB13734194F865A00CD60AD /* HSPassFormViewController.h */,
 				4AB13735194F865A00CD60AD /* HSPassFormViewController.m */,
+				4ACA2913195CA5A00015345C /* HSPassFormAddViewController.h */,
+				4ACA2914195CA5A00015345C /* HSPassFormAddViewController.m */,
 			);
 			name = Form;
 			sourceTree = "<group>";
@@ -1654,8 +1695,42 @@
 			children = (
 				4AB1378A194F94F700CD60AD /* HSPassCell.h */,
 				4AB1378B194F94F700CD60AD /* HSPassCell.m */,
+				4ACA2912195CA2C80015345C /* Form */,
+				4ACA28F6195C9FCB0015345C /* Resources */,
 			);
 			name = Pass;
+			sourceTree = "<group>";
+		};
+		4ACA28F6195C9FCB0015345C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4ACA291E195CB8120015345C /* HSPassButton.h */,
+				4ACA291F195CB8120015345C /* HSPassButton.m */,
+				4ACA28FA195CA0010015345C /* HSPassPickerView.h */,
+				4ACA28FB195CA0010015345C /* HSPassPickerView.m */,
+				4ACA28FD195CA0290015345C /* HSPassHeaderView.h */,
+				4ACA28FE195CA0290015345C /* HSPassHeaderView.m */,
+				4ACA2900195CA0B50015345C /* HSPassFormSectionView.h */,
+				4ACA2901195CA0B50015345C /* HSPassFormSectionView.m */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4ACA2912195CA2C80015345C /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				4ACA2909195CA1350015345C /* HSPassFormCell.h */,
+				4ACA290A195CA1350015345C /* HSPassFormCell.m */,
+				4ACA2903195CA1030015345C /* HSPassFormPickerCell.h */,
+				4ACA2904195CA1030015345C /* HSPassFormPickerCell.m */,
+				4ACA2906195CA11C0015345C /* HSPassFormPickerPaymentCell.h */,
+				4ACA2907195CA11C0015345C /* HSPassFormPickerPaymentCell.m */,
+				4ACA290C195CA14B0015345C /* HSPassFormAddCell.h */,
+				4ACA290D195CA14B0015345C /* HSPassFormAddCell.m */,
+				4ACA290F195CA15C0015345C /* HSPassFormEditCell.h */,
+				4ACA2910195CA15C0015345C /* HSPassFormEditCell.m */,
+			);
+			name = Form;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1815,6 +1890,7 @@
 				4AF04CCB195A123400EDA68F /* HS-Panelists.plist in Resources */,
 				4A2C5FF119506DAF00F5309F /* icon_network_s@2x.png in Resources */,
 				4A2C5FCC19506DAF00F5309F /* bt_large_purple@2x.png in Resources */,
+				4ACA2919195CB01B0015345C /* HS-Passes-Model.plist in Resources */,
 				4A674AA119523BC50048376C /* p_jeremy_rifkin_large@2x.png in Resources */,
 				4A2C5FD919506DAF00F5309F /* cell_magazine@2x.png in Resources */,
 				4A2C5FB219506DAF00F5309F /* brandwashed@2x.png in Resources */,
@@ -1835,6 +1911,7 @@
 				4A2C5FE519506DAF00F5309F /* home_videos@2x.png in Resources */,
 				4A2C5FEA19506DAF00F5309F /* icon_events@2x.png in Resources */,
 				4A674AAA19523BC50048376C /* p_paul_dickinson_large@2x.png in Resources */,
+				4ACA2917195CAB860015345C /* bt_remove@2x.png in Resources */,
 				4A9A6B1B1954D1AA004F1BE7 /* _zbar-help.html in Resources */,
 				4A2C5FCB19506DAF00F5309F /* bt_large_green@2x.png in Resources */,
 				4A2C5FFD19506DAF00F5309F /* navbar@2x.png in Resources */,
@@ -1847,7 +1924,6 @@
 				4A674AA419523BC50048376C /* p_luiz_carlos_cabrera_large@2x.png in Resources */,
 				4A2C5FE119506DAF00F5309F /* home_books@2x.png in Resources */,
 				4A674AB819523BC50048376C /* agenda_id_credential@2x.png in Resources */,
-				4AF04CC9195A122A00EDA68F /* HS-Passes.plist in Resources */,
 				4A2C5FFE19506DAF00F5309F /* navbar_2@2x.png in Resources */,
 				4A2C5FD419506DAF00F5309F /* cell_agenda@2x.png in Resources */,
 				4A2C5FE619506DAF00F5309F /* icon_books@2x.png in Resources */,
@@ -1868,6 +1944,7 @@
 				4A9A6B1E1954D1AA004F1BE7 /* zbar-helpicons.png in Resources */,
 				4A2C5FBC19506DAF00F5309F /* negocie-para-vencer@2x.png in Resources */,
 				4A674AC219523BC50048376C /* passes_id_done@2x.png in Resources */,
+				4ACA291C195CB4870015345C /* HS-Passes-Completed.plist in Resources */,
 				4A2C5FD319506DAF00F5309F /* but_plus@2x.png in Resources */,
 				4AB136B2194F845100CD60AD /* Images.xcassets in Resources */,
 				4A674AA619523BC50048376C /* p_michael_beer_large@2x.png in Resources */,
@@ -1879,6 +1956,7 @@
 				4A674A9819523BC50048376C /* p_clay_shirky_large@2x.png in Resources */,
 				4A2C5FF819506DAF00F5309F /* line@2x.png in Resources */,
 				4A2C5FC419506DAF00F5309F /* mag_mai-jun_13@2x.png in Resources */,
+				4ACA291D195CB4870015345C /* HS-Passes-Values.plist in Resources */,
 				4A2C5FB119506DAF00F5309F /* abundancia@2x.png in Resources */,
 				4A674A9F19523BC50048376C /* p_ginni_rometty_large@2x.png in Resources */,
 				4A2C600019506DAF00F5309F /* network_cell_me@2x.png in Resources */,
@@ -1956,6 +2034,8 @@
 				4A616DCD195B09B400D271A0 /* HSEventSingleInfoView.m in Sources */,
 				4AB13736194F865A00CD60AD /* HSPassFormViewController.m in Sources */,
 				4AB136B5194F845100CD60AD /* main.m in Sources */,
+				4ACA290B195CA1350015345C /* HSPassFormCell.m in Sources */,
+				4ACA2905195CA1030015345C /* HSPassFormPickerCell.m in Sources */,
 				4AB136FA194F84B700CD60AD /* SDWebImagePrefetcher.m in Sources */,
 				4AB13722194F85BF00CD60AD /* HSPassesViewController.m in Sources */,
 				4AB13757194F87EF00CD60AD /* HSEventCell.m in Sources */,
@@ -1968,7 +2048,9 @@
 				4A817CD41958891A00208DFB /* HSNetworkSignViewController.m in Sources */,
 				4AB13752194F87C500CD60AD /* HSBook.m in Sources */,
 				4AB13728194F85DA00CD60AD /* HSEventsViewController.m in Sources */,
+				4ACA28FF195CA0290015345C /* HSPassHeaderView.m in Sources */,
 				4AB13716194F856D00CD60AD /* HSPanelist.m in Sources */,
+				4ACA2915195CA5A00015345C /* HSPassFormAddViewController.m in Sources */,
 				4A616DC7195B098200D271A0 /* HSEventSingleContentView.m in Sources */,
 				4AB13710194F855D00CD60AD /* HSEvent.m in Sources */,
 				4AB13743194F86CC00CD60AD /* HSBooksViewController.m in Sources */,
@@ -1978,7 +2060,9 @@
 				4A674ACD195240BB0048376C /* HSAdSuperstitial.m in Sources */,
 				4A3406BF194F9AD000347815 /* HSLecture.m in Sources */,
 				4AB1372B194F85E800CD60AD /* HSAgendaViewController.m in Sources */,
+				4ACA290E195CA14B0015345C /* HSPassFormAddCell.m in Sources */,
 				4A817CD119585F8E00208DFB /* MBProgressHUD.m in Sources */,
+				4ACA2920195CB8120015345C /* HSPassButton.m in Sources */,
 				4AB13725194F85C900CD60AD /* HSHomeViewController.m in Sources */,
 				4A616DCA195B099600D271A0 /* HSEventSingleFooterView.m in Sources */,
 				4AB13703194F851900CD60AD /* HSAnalytics.m in Sources */,
@@ -1987,7 +2071,9 @@
 				4AB136B3194F845100CD60AD /* HSAppDelegate.m in Sources */,
 				4AB13700194F850600CD60AD /* HSMaster.m in Sources */,
 				4AB136F7194F84B700CD60AD /* SDWebImageDecoder.m in Sources */,
+				4ACA2902195CA0B50015345C /* HSPassFormSectionView.m in Sources */,
 				4AB13778194F91BA00CD60AD /* HSAd.m in Sources */,
+				4ACA28FC195CA0010015345C /* HSPassPickerView.m in Sources */,
 				4A616DD7195B1A4B00D271A0 /* HSEventManager.m in Sources */,
 				4A674ADA195241220048376C /* HSAdBannerExpand.m in Sources */,
 				4A9A6B271954D663004F1BE7 /* HSNetworkManager.m in Sources */,
@@ -1998,8 +2084,10 @@
 				4AB13780194F93C400CD60AD /* HSNetworkCell.m in Sources */,
 				4AB136FB194F84B700CD60AD /* UIButton+WebCache.m in Sources */,
 				4AB13770194F915500CD60AD /* HSNetworkSingleViewController.m in Sources */,
+				4ACA2911195CA15C0015345C /* HSPassFormEditCell.m in Sources */,
 				4A9A6AEE1954BDF9004F1BE7 /* HSLocalClient.m in Sources */,
 				4AB1373A194F867200CD60AD /* HSPassDoneViewController.m in Sources */,
+				4ACA2908195CA11C0015345C /* HSPassFormPickerPaymentCell.m in Sources */,
 				4AB136F6194F84B700CD60AD /* SDImageCache.m in Sources */,
 				4A674AD6195241080048376C /* HSAdBannerHome.m in Sources */,
 				4AB13732194F862D00CD60AD /* HSPanelistSingleViewController.m in Sources */,

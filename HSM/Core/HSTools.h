@@ -40,6 +40,8 @@ AlertViewOption;
 - (void) promptWithMessage:(NSString*) message completionYes:(void(^)(void)) compYes completionNo:(void(^)(void)) compNo;
 
 - (BOOL) isValidEmail:(NSString*) str;
+- (BOOL) isValidCPF:(NSString*) str;
+- (BOOL) isValidCNPJ:(NSString*) str;
 
 - (NSArray*) explode: (NSString*) string bySeparator:(NSString*)separator;
 

@@ -99,6 +99,12 @@
     NSURL *url = [NSURL URLWithString:stringURL];
     [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
 }
+- (void) passesEmail:(NSString *) urlWithParameters completion:(void(^)(BOOL succeed, NSDictionary *result))block
+{
+    // request..
+    NSURL *url = [NSURL URLWithString:urlWithParameters];
+    [self sendRequestToURL:url method:kHTTPMethodGET parameters:nil completion:block];
+}
 
 #pragma mark - Private Methods
 

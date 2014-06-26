@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>key</key>
+		<string>red</string>
+		<key>label</key>
+		<string>Passe Corporate</string>
+		<key>sections</key>
+		<array>
+			<dict>
+				<key>label</key>
+				<string>Dados do Participante</string>
+				<key>limit</key>
+				<integer>5</integer>
+				<key>rows</key>
+				<array>
+					<dict>
+						<key>type</key>
+						<integer>4</integer>
+						<key>subtype</key>
+						<string>add</string>
+						<key>label</key>
+						<string>Adicionar Participante</string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>label</key>
+				<string>Forma de Pagamento</string>
+				<key>rows</key>
+				<array>
+					<dict>
+						<key>type</key>
+						<integer>2</integer>
+						<key>subtype</key>
+						<string>pickerPayment</string>
+						<key>label</key>
+						<string>Cartão de Crédito</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>green</string>
+		<key>label</key>
+		<string>Passe Verde</string>
+		<key>sections</key>
+		<array>
+			<dict>
+				<key>label</key>
+				<string>Escolha um dia</string>
+				<key>rows</key>
+				<array>
+					<dict>
+						<key>type</key>
+						<integer>1</integer>
+						<key>subtype</key>
+						<string>pickerDate</string>
+						<key>label</key>
+						<string>Selecione...</string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>label</key>
+				<string>Dados do Participante</string>
+				<key>limit</key>
+				<string>1</string>
+				<key>rows</key>
+				<array>
+					<dict>
+						<key>type</key>
+						<integer>4</integer>
+						<key>subtype</key>
+						<string>add</string>
+						<key>label</key>
+						<string>Adicionar Participante</string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>label</key>
+				<string>Forma de Pagamento</string>
+				<key>rows</key>
+				<array>
+					<dict>
+						<key>type</key>
+						<integer>2</integer>
+						<key>subtype</key>
+						<string>pickerPayment</string>
+						<key>label</key>
+						<string>Cartão de Crédito</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>key</key>
+		<string>gold</string>
+		<key>label</key>
+		<string>Passe Dourado</string>
+		<key>sections</key>
+		<array>
+			<dict>
+				<key>label</key>
+				<string>Dados do Participante</string>
+				<key>limit</key>
+				<string>1</string>
+				<key>rows</key>
+				<array>
+					<dict>
+						<key>type</key>
+						<integer>4</integer>
+						<key>subtype</key>
+						<string>add</string>
+						<key>label</key>
+						<string>Adicionar Participante</string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>label</key>
+				<string>Forma de Pagamento</string>
+				<key>rows</key>
+				<array>
+					<dict>
+						<key>type</key>
+						<integer>2</integer>
+						<key>subtype</key>
+						<string>pickerPayment</string>
+						<key>label</key>
+						<string>Cartão de Crédito</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

@@ -19,6 +19,8 @@ typedef enum HSPassColor : NSInteger
 }
 HSPassColor;
 
+#define HS_PASS_COLORS      @[ @"red", @"green", @"gold" ]
+
 #pragma mark - Interface
 
 @interface HSPass : NSObject

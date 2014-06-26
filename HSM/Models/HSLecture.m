@@ -15,6 +15,7 @@
 @synthesize title, subtitle, text;
 @synthesize date;
 @synthesize hourStart, hourEnd;
+@synthesize themeTitle, themeText;
 
 #pragma mark - Methods
 

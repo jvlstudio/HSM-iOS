@@ -33,6 +33,7 @@ HTTPMethod;
 - (void) agendaForEvent:(NSString *) eventId completion:(void(^)(BOOL succeed, NSDictionary *result))block;
 - (void) panelistsForEvent:(NSString *) eventId completion:(void(^)(BOOL succeed, NSDictionary *result))block;
 - (void) passesForEvent:(NSString *) eventId completion:(void(^)(BOOL succeed, NSDictionary *result))block;
+- (void) passesEmail:(NSString *) urlWithParameters completion:(void(^)(BOOL succeed, NSDictionary *result))block;
 
 - (void) ads:(void(^)(BOOL succeed, NSDictionary *result))block;
 - (void) adClicked:(NSString *) adId completion:(void(^)(BOOL succeed, NSDictionary *result))block;

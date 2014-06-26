@@ -21,7 +21,16 @@ typedef enum HSREsourceIndex : NSInteger
     kResourceEventSingleContent = 1,
     kResourceEventSingleFooter  = 2,
     kResourceEventSingleInfo    = 3,
-    kResourceEventSingleText    = 4
+    kResourceEventSingleText    = 4,
+    kResourcePassRowView        = 5,
+    kResourcePassPickerView     = 6,
+    kResourcePassHeaderView     = 7,
+    kResourcePassFormSection    = 8,
+    kResourcePassFormPickerCell = 9,
+    kResourcePassFormPaymentCell= 10,
+    kResourcePassFormCell       = 11,
+    kResourcePassFormAddCell    = 12,
+    kResourcePassFormEditCell   = 13
 }
 HSREsourceIndex;
 

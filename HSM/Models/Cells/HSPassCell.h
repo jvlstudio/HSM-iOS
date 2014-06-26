@@ -13,6 +13,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *imgBackground;
 @property (nonatomic, weak) IBOutlet UILabel *labTitle;
 @property (nonatomic, weak) IBOutlet UILabel *labDescription;
+@property (nonatomic, weak) IBOutlet UILabel *labValidto;
 @property (nonatomic, weak) IBOutlet UILabel *labValue;
 @property (nonatomic, weak) IBOutlet UILabel *labValuePromo;
 

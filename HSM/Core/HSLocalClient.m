@@ -57,9 +57,10 @@
 {
     NSArray *localData = [[HSMaster tools] propertyListRead:HS_PLIST_EVENTS];
     NSMutableArray *newData = [NSMutableArray array];
-    for (NSDictionary *dict in localData)
+    for (NSDictionary *row in localData)
     {
         // object
+        NSDictionary *dict = [row objectForKey:@"info"];
         HSEvent *object = [HSEvent new];
         object.uniqueId = [dict objectForKey:@"id"];
         object.name = [dict objectForKey:@"name"];
@@ -215,9 +216,14 @@
 }
 - (NSArray *) agendaForEvent:(NSString *) eventId
 {
-    NSDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_AGENDA];
-    NSArray *localData  = [plist objectForKey:[NSString stringWithFormat:@"event_%@", eventId]];
+    //NSDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_AGENDA];
+    //NSArray *localData  = [plist objectForKey:[NSString stringWithFormat:@"event_%@", eventId]];
     NSMutableArray *newData = [NSMutableArray array];
+    NSDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_EVENTS];
+    NSArray *localData  = [NSArray array];
+    for (NSDictionary *dict in plist)
+        if ([[[dict objectForKey:@"info"] objectForKey:@"id"] isEqualToString:eventId])
+            localData = [dict objectForKey:@"agenda"];
     
     if (localData && [localData count] > 0) {
         for (NSDictionary *dict in localData)
@@ -232,6 +238,18 @@
             object.date     = [HSLecture dateWithValue:[[dict objectForKey:@"date"] objectForKey:@"date"]];
             object.hourStart= [HSLecture hourWithValue:[[dict objectForKey:@"date"] objectForKey:@"start"]];
             object.hourEnd  = [HSLecture hourWithValue:[[dict objectForKey:@"date"] objectForKey:@"end"]];
+            
+            NSDictionary *pandict = [dict objectForKey:@"panelist"];
+            HSPanelist *pan = [HSPanelist new];
+            pan.uniqueId    = [pandict objectForKey:@"id"];
+            pan.name        = [pandict objectForKey:@"name"];
+            pan.slug        = [pandict objectForKey:@"slug"];
+            pan.description = [pandict objectForKey:@"description"];
+            pan.pictureURL  = [pandict objectForKey:@"image"];
+            
+            object.themeTitle   = [[pandict objectForKey:@"theme"] objectForKey:@"title"];
+            object.themeText    = [[pandict objectForKey:@"theme"] objectForKey:@"description"];
+            object.panelist     = pan;
             
             [newData addObject:object];
         }
@@ -268,9 +286,14 @@
 }
 - (NSArray *) panelistsForEvent:(NSString *) eventId
 {
-    NSDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_PANELISTS];
-    NSArray *localData  = [plist objectForKey:[NSString stringWithFormat:@"event_%@", eventId]];
+    //NSDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_PANELISTS];
+    //NSArray *localData  = [plist objectForKey:[NSString stringWithFormat:@"event_%@", eventId]];
     NSMutableArray *newData = [NSMutableArray array];
+    NSDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_EVENTS];
+    NSArray *localData  = [NSArray array];
+    for (NSDictionary *dict in plist)
+        if ([[[dict objectForKey:@"info"] objectForKey:@"id"] isEqualToString:eventId])
+            localData = [dict objectForKey:@"panelists"];
     
     if (localData && [localData count] > 0) {
         for (NSDictionary *dict in localData)
@@ -313,17 +336,22 @@
 - (void) savePasses:(NSArray *)data forEvent:(NSString *)eventId
 {
     if (data) {
-        NSMutableDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_PASSES];
+        NSMutableDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_PASSES_MODEL];
         NSString *key = [NSString stringWithFormat:@"event_%@", eventId];
         [plist setObject:data forKey:key];
-        [[HSMaster tools] propertyListWrite:plist forFileName:HS_PLIST_PASSES];
+        [[HSMaster tools] propertyListWrite:plist forFileName:HS_PLIST_PASSES_MODEL];
     }
 }
 - (NSArray *) passesForEvent:(NSString *) eventId
 {
-    NSDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_PASSES];
-    NSArray *localData  = [plist objectForKey:[NSString stringWithFormat:@"event_%@", eventId]];
+    //NSDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_PASSES];
+    //NSArray *localData  = [plist objectForKey:[NSString stringWithFormat:@"event_%@", eventId]];
     NSMutableArray *newData = [NSMutableArray array];
+    NSDictionary *plist = [[HSMaster tools] propertyListRead:HS_PLIST_EVENTS];
+    NSArray *localData  = [NSArray array];
+    for (NSDictionary *dict in plist)
+        if ([[[dict objectForKey:@"info"] objectForKey:@"id"] isEqualToString:eventId])
+            localData = [dict objectForKey:@"passes"];
     
     if (localData && [localData count] > 0) {
         for (NSDictionary *dict in localData)
@@ -353,10 +381,10 @@
     [[HSMaster rest] passesForEvent:eventId completion:^(BOOL succeed, NSDictionary *result) {
         if (succeed) {
             if (result != nil) {
-                NSMutableDictionary *mdict = [[HSMaster tools] propertyListRead:HS_PLIST_PASSES];
+                NSMutableDictionary *mdict = [[HSMaster tools] propertyListRead:HS_PLIST_PASSES_MODEL];
                 NSString *key = [NSString stringWithFormat:@"passes_%@", eventId];
                 [mdict setObject:[result objectForKey:@"data"] forKey:key];
-                [[HSMaster tools] propertyListWrite:mdict forFileName:HS_PLIST_PASSES];
+                [[HSMaster tools] propertyListWrite:mdict forFileName:HS_PLIST_PASSES_MODEL];
             }
         }
         if (hud)

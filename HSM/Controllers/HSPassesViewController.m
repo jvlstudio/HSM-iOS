@@ -6,7 +6,10 @@
 //  Copyright (c) 2014 ikomm Digital Solutions. All rights reserved.
 //
 
+#import "HSPassFormViewController.h"
 #import "HSPassesViewController.h"
+#import "HSPassCell.h"
+#import "HSPass.h"
 
 @interface HSPassesViewController ()
 
@@ -14,36 +17,52 @@
 
 @implementation HSPassesViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize event;
+
+#pragma mark - Controller Methods
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //
+    rows = [[HSMaster local] passesForEvent:event.uniqueId];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Table Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [rows count];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HSPassCell *cell = (HSPassCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    // configure..
+    HSPass *pass = [rows objectAtIndex:indexPath.row];
+    cell.labTitle.text          = pass.name;
+    cell.labDescription.text    = pass.description;
+    cell.labValue.text          = pass.value;
+    cell.labValuePromo.text     = pass.valuePromo;
+    cell.labValidto.text        = pass.validTo;
+    cell.imgBackground.image    = [UIImage imageNamed:[NSString stringWithFormat:@"pass_%@.png", [HS_PASS_COLORS objectAtIndex:pass.color]]];
+    
+    return cell;
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    HSPass *pass = [rows objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+    HSPassFormViewController *vc = (HSPassFormViewController *)[segue destinationViewController];
+    vc.pass = pass;
+    vc.event = event;
 }
-*/
 
 @end

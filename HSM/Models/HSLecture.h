@@ -34,6 +34,8 @@ HSLectureType;
     NSDate *date;
     NSDate *hourStart;
     NSDate *hourEnd;
+    NSString *themeTitle;
+    NSString *themeText;
 }
 
 @property (nonatomic) HSLectureType type;
@@ -45,6 +47,8 @@ HSLectureType;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSDate *hourStart;
 @property (nonatomic, strong) NSDate *hourEnd;
+@property (nonatomic, strong) NSString *themeTitle;
+@property (nonatomic, strong) NSString *themeText;
 
 #pragma mark - Methods
 

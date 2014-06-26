@@ -46,40 +46,6 @@
     }
     [self manageButtons];
 }
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    NSLog(@"event: %@", event.uniqueId);
-    // check
-    if ([agendaDays count] == 0) {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"Carregando Agenda...";
-        [[HSMaster rest] agendaForEvent:event.uniqueId completion:^(BOOL succeed, NSDictionary *result) {
-            [hud hide:YES];
-            if (succeed) {
-                if (result != nil) {
-                    [[HSMaster local] saveAgenda:[result objectForKey:@"data"] forEvent:event.uniqueId];
-                    agendaDays  = [[HSMaster local] agendaForEvent:event.uniqueId];
-                    scheduleDays= [[HSMaster local] agenda:agendaDays splitedByDays:event];
-                    rows        = [scheduleDays objectAtIndex:0];
-                    [self manageButtons];
-                    [self.tableView reloadData];
-                }
-            }
-        }];
-    }
-    else {
-        // update in background
-        [[HSMaster rest] loadInBackground:YES];
-        [[HSMaster rest] agendaForEvent:event.uniqueId completion:^(BOOL succeed, NSDictionary *result) {
-            if (succeed) {
-                if (result != nil) {
-                    [[HSMaster local] saveAgenda:[result objectForKey:@"data"] forEvent:event.uniqueId];
-                }
-            }
-        }];
-    }
-}
 
 #pragma mark - IBActions
 
@@ -97,9 +63,9 @@
 
 - (void) manageButtons
 {
-    if ([agendaDays count] == 1)
+    if (event.dates.count == 1)
         [self.tableView setTableHeaderView:nil];
-    if ([agendaDays count] == 2)
+    if (event.dates.count == 2)
         [segment removeSegmentAtIndex:2 animated:NO];
     
     int i=0;

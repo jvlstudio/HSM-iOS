@@ -175,6 +175,7 @@ HSEventInfoType;
 {
     UIStoryboard *panelistSB = [UIStoryboard storyboardWithName:@"Panelists" bundle:nil];
     HSPanelistsViewController *vc = (HSPanelistsViewController *)[panelistSB instantiateInitialViewController];
+    vc.event = event;
     [[self navigationController] pushViewController:vc animated:YES];
 }
 - (void) pressPasses:(UIButton *) sender

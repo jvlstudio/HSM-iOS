@@ -9,7 +9,8 @@
 #import "HSPanelistSingleViewController.h"
 
 @interface HSPanelistSingleViewController ()
-- (void) setFrames;
+- (void) setFramesForLecture;
+- (void) setFramesForPanlist;
 - (UITextView*) createTextView;
 - (UILabel*) createLabelTitle;
 - (NSString*) changeDateLabel:(NSString*) str;
@@ -21,47 +22,99 @@
 @implementation HSPanelistSingleViewController
 
 @synthesize lecture;
+@synthesize panelist;
 
 #pragma mark - Controller Methods
 
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    //
-    panelist = lecture.panelist;
     
-    // ...
-    textDescription = [self createTextView];
-    textTheme       = [self createTextView];
-    labTheme        = [self createLabelTitle];
+    // navigation
+    self.title = @"Palestrante";
+    UIBarButtonItem *barbt = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btbar_back.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(pressBack:)];
+    self.navigationItem.leftBarButtonItem = barbt;
     
-    [labTheme setText:lecture.title];
-    [labTheme sizeToFit];
+    // has "panelist"
+    if (panelist) {
+        // ...
+        textDescription = [self createTextView];
+        
+        [labTheme setText:lecture.title];
+        [labTheme sizeToFit];
+        
+        // ...
+        [labName setText:panelist.name];
+        [labLecture setText:@"Palestrante"];
+        [labDate setText:@"..."];
+        [labHour setText:@"..."];
+        [textDescription setText:panelist.description];
+        
+        [scroll addSubview:textDescription];
+        
+        [butSchedule setAlpha:0];
+        [imgPicture setImage:[UIImage imageNamed:panelist.pictureURL]];
+        
+        // ...
+        NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+        NSString *logKey    = [NSString stringWithFormat:@"log_scheduled_%@", panelist.uniqueId];
+        if ([[def objectForKey:logKey] isEqualToString:@"yes"])
+            [self disabledButton];
+    }
     
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"dd/MMM"];
+    // has "lecture"
+    if (lecture) {
+        panelist = lecture.panelist;
+        
+        // ...
+        textDescription = [self createTextView];
+        textTheme       = [self createTextView];
+        labTheme        = [self createLabelTitle];
+        
+        [labTheme setText:lecture.themeTitle];
+        [labTheme sizeToFit];
+        
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"dd/MMM"];
+        
+        // ...
+        [labName setText:panelist.name];
+        [labLecture setText:lecture.themeTitle];
+        [labDate setText:[df stringFromDate:lecture.date]];
+        [labHour setText:[self stringForHour]];
+        [textDescription setText:panelist.description];
+        [textTheme setText:lecture.themeText];
+        
+        [scroll addSubview:textDescription];
+        [scroll addSubview:labTheme];
+        [scroll addSubview:textTheme];
+        
+        [butSchedule setAlpha:0];
+        
+        [imgPicture setImage:[UIImage imageNamed:panelist.pictureURL]];
+        
+        // ...
+        NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+        NSString *logKey    = [NSString stringWithFormat:@"log_scheduled_%@", panelist.uniqueId];
+        if ([[def objectForKey:logKey] isEqualToString:@"yes"])
+            [self disabledButton];
+    }
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    // ...
-    [labName setText:panelist.name];
-    [labLecture setText:lecture.title];
-    [labDate setText:[df stringFromDate:lecture.date]];
-    [labHour setText:[self stringForHour]];
-    [textDescription setText:panelist.description];
-    [textTheme setText:lecture.text];
-    
-    [scroll addSubview:textDescription];
-    [scroll addSubview:labTheme];
-    [scroll addSubview:textTheme];
-    
-    [butSchedule setAlpha:0];
-    
-    [imgPicture setImage:[UIImage imageNamed:panelist.pictureURL]];
-    
-    // ...
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    NSString *logKey    = [NSString stringWithFormat:@"log_scheduled_%@", panelist.uniqueId];
-    if ([[def objectForKey:logKey] isEqualToString:@"yes"])
-        [self disabledButton];
+    if (panelist)
+        [self setFramesForPanlist];
+    if (lecture)
+        [self setFramesForLecture];
+}
+
+#pragma mark - Actions
+
+- (void) pressBack:(UIBarButtonItem *)sender
+{
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 #pragma mark - IBActions
@@ -75,7 +128,7 @@
 
 #pragma mark Private Methods
 
-- (void)setFrames
+- (void) setFramesForPanlist
 {
     // rect description
     CGRect rect1        = textDescription.frame;
@@ -83,6 +136,19 @@
     rect1.size.height   = textDescription.contentSize.height;
     [textDescription setFrame:rect1];
     [textDescription setEditable:NO];
+    
+    // rect button
+    CGRect rect4 = butSchedule.frame;
+    rect4.origin.y      = textDescription.frame.origin.y + textDescription.frame.size.height + 20;
+    rect4.origin.x      = (WINDOW_WIDTH/2) - (rect4.size.width/2);
+    [butSchedule setFrame:rect4];
+    
+    [textDescription setAlpha:1];
+    [butSchedule setAlpha:1];
+}
+- (void) setFramesForLecture
+{
+    [self setFramesForPanlist];
     
     // rect title
     CGRect rect2        = labTheme.frame;
@@ -103,12 +169,11 @@
     rect4.origin.x      = (WINDOW_WIDTH/2) - (rect4.size.width/2);
     [butSchedule setFrame:rect4];
     
-    [textDescription setAlpha:1];
     [labTheme setAlpha:1];
     [textTheme setAlpha:1];
-    [butSchedule setAlpha:1];
     
     [scroll setContentSize:CGSizeMake(headerView.frame.size.width, butSchedule.frame.origin.y+butSchedule.frame.size.height + 20)];
+    NSLog(@"%f", scroll.contentSize.height);
 }
 - (UITextView*) createTextView
 {

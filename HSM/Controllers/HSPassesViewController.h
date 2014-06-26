@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface HSPassesViewController : UITableViewController
+{
+    HSEvent *event;
+    NSArray *rows;
+}
+
+@property (nonatomic, strong) HSEvent *event;
 
 @end

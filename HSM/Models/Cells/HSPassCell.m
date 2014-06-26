@@ -11,6 +11,7 @@
 @implementation HSPassCell
 
 @synthesize imgBackground;
+@synthesize labValidto;
 @synthesize labTitle, labDescription, labValue, labValuePromo;
 
 @end
