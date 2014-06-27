@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 ikomm Digital Solutions. All rights reserved.
 //
 
-#import "HSPassFormViewController.h"
 #import "HSPassFormAddViewController.h"
 
 @interface HSPassFormAddViewController ()
@@ -20,6 +19,7 @@
     CGPoint currentOffset;
 }
 
+@synthesize pass;
 @synthesize indexPath;
 
 #pragma mark - Controller Methods
@@ -33,22 +33,14 @@
 
 - (void) setConfigurations
 {
-    [scr setContentSize:CGSizeMake(scr.contentSize.width, v.frame.size.height+50)];
+    [scroll setContentSize:CGSizeMake(scroll.contentSize.width, contentView.frame.size.height+50)];
     [[self view] setBackgroundColor:[UIColor colorWithRed:45.0/255.0 green:45.0/255.0 blue:60.0/255.0 alpha:1]];
     
-    // set delegate ..
-    NSArray *subviews = [v subviews];
-    for (UIView *vs in subviews)
-    {
-        if ([vs isKindOfClass:[UITextField class]])
-        {
-            UITextField *tf = (UITextField*)vs;
-            [tf setDelegate:self];
-            [tf addTarget:self action:@selector(textFieldDidEndOnExit:) forControlEvents:UIControlEventEditingDidEnd];
-            [tf addTarget:self action:@selector(textFieldDidEndOnExit:) forControlEvents:UIControlEventEditingDidEndOnExit];
-            [tf setValue:COLOR_DESCRIPTION forKeyPath:@"_placeholderLabel.textColor"];
-        }
-    }
+    [tfName setValue:COLOR_DESCRIPTION forKey:KEY_PLACEHOLDER];
+    [tfEmail setValue:COLOR_DESCRIPTION forKey:KEY_PLACEHOLDER];
+    [tfCPF setValue:COLOR_DESCRIPTION forKey:KEY_PLACEHOLDER];
+    [tfCompany setValue:COLOR_DESCRIPTION forKey:KEY_PLACEHOLDER];
+    [tfRole setValue:COLOR_DESCRIPTION forKey:KEY_PLACEHOLDER];
     
     // ...
     // check if participant was touched
@@ -57,7 +49,7 @@
 
 #pragma mark - IBActions
 
-- (IBAction) pressConfirm:(id)sender
+- (IBAction) pressConfirm:(UIButton *)sender
 {
     if ([self isFormValidToSubmit])
     {
@@ -68,19 +60,30 @@
         [mutDict setObject:[tfRole text] forKey:@"role"];
         [mutDict setObject:[tfCPF text] forKey:@"cpf"];
         // ...
-        [HSPassFormViewController recordParticipant:mutDict atIndexPath:indexPath];
+        [[HSMaster passes] recordParticipant:mutDict atIndexPath:indexPath withColor:pass.color];
         [[self navigationController] popViewControllerAnimated:YES];
     }
     else {
         [[HSMaster tools] dialogWithMessage:@"Por favor, preencha os campos corretamente."];
     }
 }
+#pragma mark - IBActions
+
+- (IBAction) pressBack:(UIBarButtonItem *)sender
+{
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+- (IBAction) textFieldDidEndOnExit:(UITextField *) sender
+{
+    UITextField *tf = (UITextField*)sender;
+    [tf endEditing:YES];
+}
 
 #pragma mark - Private Methods
 
 - (void) fillIfHasParticipant
 {
-    NSDictionary *dict = [HSPassFormViewController rowAtIndexPath:indexPath];
+    NSDictionary *dict = [[HSMaster passes] rowAtIndexPath:indexPath withColor:pass.color];
     if ([[dict objectForKey:@"subtype"] isEqualToString:@"edit"])
     {
         NSDictionary *values = [dict objectForKey:@"values"];
@@ -127,22 +130,17 @@
 
 - (void) textFieldDidBeginEditing:(UITextField *)textField
 {
-    CGSize rect  = scr.contentSize;
+    CGSize rect  = scroll.contentSize;
     rect.height += PICKER_HEIGHT;
     
-    [scr setContentSize:rect];
-    [scr setContentOffset:currentOffset];
+    [scroll setContentSize:rect];
+    [scroll setContentOffset:currentOffset];
 }
 - (void) textFieldDidEndEditing:(UITextField *)textField
 {
-    CGSize rect  = scr.contentSize;
+    CGSize rect  = scroll.contentSize;
     rect.height -= PICKER_HEIGHT;
-    [scr setContentSize:rect];
-}
-- (void) textFieldDidEndOnExit:(UITextField *) sender
-{
-    UITextField *tf = (UITextField*)sender;
-    [tf endEditing:YES];
+    [scroll setContentSize:rect];
 }
 
 #pragma mark -

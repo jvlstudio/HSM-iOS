@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0FB456195DDF9500478451 /* HSPassFormOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0FB455195DDF9500478451 /* HSPassFormOptionsViewController.m */; };
+		4A0FB45A195DE78B00478451 /* HSPassManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0FB459195DE78B00478451 /* HSPassManager.m */; };
 		4A2C5F3C1950628400F5309F /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2C5F2E1950628400F5309F /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4A2C5F3D1950628400F5309F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2C5F2F1950628400F5309F /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4A2C5F3E1950628400F5309F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2C5F301950628400F5309F /* AudioToolbox.framework */; };
@@ -300,6 +302,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A0FB454195DDF9500478451 /* HSPassFormOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPassFormOptionsViewController.h; sourceTree = "<group>"; };
+		4A0FB455195DDF9500478451 /* HSPassFormOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPassFormOptionsViewController.m; sourceTree = "<group>"; };
+		4A0FB458195DE78B00478451 /* HSPassManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPassManager.h; sourceTree = "<group>"; };
+		4A0FB459195DE78B00478451 /* HSPassManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPassManager.m; sourceTree = "<group>"; };
 		4A2C5F2E1950628400F5309F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		4A2C5F2F1950628400F5309F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		4A2C5F301950628400F5309F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -738,6 +744,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A0FB457195DE77800478451 /* Pass Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4A0FB458195DE78B00478451 /* HSPassManager.h */,
+				4A0FB459195DE78B00478451 /* HSPassManager.m */,
+			);
+			name = "Pass Manager";
+			sourceTree = "<group>";
+		};
 		4A2C5F5019506DAF00F5309F /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1252,6 +1267,7 @@
 				4A9A6AEB1954BDDA004F1BE7 /* Local */,
 				4A616DD4195B1A3800D271A0 /* Event Manager */,
 				4A9A6B241954D64E004F1BE7 /* Network Manager */,
+				4A0FB457195DE77800478451 /* Pass Manager */,
 				4AB136B9194F847A00CD60AD /* Tools */,
 				4AB136AB194F845100CD60AD /* Supported Files */,
 			);
@@ -1523,6 +1539,8 @@
 				4AB13735194F865A00CD60AD /* HSPassFormViewController.m */,
 				4ACA2913195CA5A00015345C /* HSPassFormAddViewController.h */,
 				4ACA2914195CA5A00015345C /* HSPassFormAddViewController.m */,
+				4A0FB454195DDF9500478451 /* HSPassFormOptionsViewController.h */,
+				4A0FB455195DDF9500478451 /* HSPassFormOptionsViewController.m */,
 			);
 			name = Form;
 			sourceTree = "<group>";
@@ -2082,6 +2100,7 @@
 				4AB136F8194F84B700CD60AD /* SDWebImageDownloader.m in Sources */,
 				4AB1378C194F94F800CD60AD /* HSPassCell.m in Sources */,
 				4AB13780194F93C400CD60AD /* HSNetworkCell.m in Sources */,
+				4A0FB45A195DE78B00478451 /* HSPassManager.m in Sources */,
 				4AB136FB194F84B700CD60AD /* UIButton+WebCache.m in Sources */,
 				4AB13770194F915500CD60AD /* HSNetworkSingleViewController.m in Sources */,
 				4ACA2911195CA15C0015345C /* HSPassFormEditCell.m in Sources */,
@@ -2090,6 +2109,7 @@
 				4ACA2908195CA11C0015345C /* HSPassFormPickerPaymentCell.m in Sources */,
 				4AB136F6194F84B700CD60AD /* SDImageCache.m in Sources */,
 				4A674AD6195241080048376C /* HSAdBannerHome.m in Sources */,
+				4A0FB456195DDF9500478451 /* HSPassFormOptionsViewController.m in Sources */,
 				4AB13732194F862D00CD60AD /* HSPanelistSingleViewController.m in Sources */,
 				4AB13719194F857500CD60AD /* HSPass.m in Sources */,
 				4AB13747194F86E600CD60AD /* HSBookSingleViewController.m in Sources */,

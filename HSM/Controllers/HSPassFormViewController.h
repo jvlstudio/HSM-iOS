@@ -27,7 +27,6 @@ HSPassCellType;
 #pragma mark - Interface
 
 @interface HSPassFormViewController : UITableViewController
-<UIPickerViewDelegate, UIPickerViewDataSource>
 {
     HSPass *pass;
     HSEvent *event;
@@ -36,9 +35,6 @@ HSPassCellType;
     NSDictionary *passData;
     NSArray *passSections;
     NSArray *dates;
-    
-    HSPassPickerView *pvDates;
-    HSPassPickerView *pvPayment;
     
     IBOutlet UIImageView *imgHeader;
     IBOutlet UIButton *butDone;
@@ -51,15 +47,11 @@ HSPassCellType;
 
 - (IBAction) pressConfirm:(UIButton *)sender;
 - (IBAction) pressBack:(UIBarButtonItem *)sender;
+- (IBAction) pressClose:(UIBarButtonItem *)sender;
 - (void) pressDelete:(UIButton *)sender;
 
 #pragma mark -
 #pragma mark Record Methods
-
-+ (void) recordValue: (NSString*) value forKey:(NSString*) key atIndexPath:(NSIndexPath*) ip;
-+ (void) recordParticipant:(NSMutableDictionary*) dict atIndexPath:(NSIndexPath*) ip;
-+ (NSDictionary*) rowAtIndexPath:(NSIndexPath*) ip;
-+ (BOOL) removeParticipantAtIndexPath:(NSIndexPath*) ip;
 
 - (void) saveFormDataToPropertyList;
 - (void) sendPassEmailToHSM;
@@ -69,11 +61,5 @@ HSPassCellType;
 
 - (NSInteger) heightForCellType:(HSPassCellType) cellType;
 - (NSString*) stringForPassColor:(HSPassColor) color;
-
-#pragma mark -
-#pragma mark Picker Methods
-
-- (void) pickerShow:(UIPickerView*) picker;
-- (void) pickerHide:(UIPickerView*) picker;
 
 @end

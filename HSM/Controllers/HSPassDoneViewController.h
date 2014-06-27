@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface HSPassDoneViewController : UIViewController
+{
+    IBOutlet UIScrollView *scroll;
+    IBOutlet UIView *contentView;
+    IBOutlet UIButton *button;
+}
+
+#pragma mark - IBActions
+
+- (IBAction) pressButton:(UIButton *)sender;
 
 @end

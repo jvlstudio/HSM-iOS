@@ -11,6 +11,7 @@
 #import "HSLocalClient.h"
 #import "HSEventManager.h"
 #import "HSNetworkManager.h"
+#import "HSPassManager.h"
 #import "HSTools.h"
 
 #pragma mark - typedef
@@ -22,15 +23,14 @@ typedef enum HSREsourceIndex : NSInteger
     kResourceEventSingleFooter  = 2,
     kResourceEventSingleInfo    = 3,
     kResourceEventSingleText    = 4,
-    kResourcePassRowView        = 5,
-    kResourcePassPickerView     = 6,
-    kResourcePassHeaderView     = 7,
-    kResourcePassFormSection    = 8,
-    kResourcePassFormPickerCell = 9,
-    kResourcePassFormPaymentCell= 10,
-    kResourcePassFormCell       = 11,
-    kResourcePassFormAddCell    = 12,
-    kResourcePassFormEditCell   = 13
+    kResourcePassPickerView     = 5,
+    kResourcePassHeaderView     = 6,
+    kResourcePassFormSection    = 7,
+    kResourcePassFormPickerCell = 8,
+    kResourcePassFormPaymentCell= 9,
+    kResourcePassFormCell       = 10,
+    kResourcePassFormAddCell    = 11,
+    kResourcePassFormEditCell   = 12
 }
 HSREsourceIndex;
 
@@ -45,6 +45,7 @@ HSREsourceIndex;
 + (HSLocalClient *) local;
 + (HSEventManager *) events;
 + (HSNetworkManager *) network;
++ (HSPassManager *) passes;
 + (HSTools *) tools;
 
 // Properties

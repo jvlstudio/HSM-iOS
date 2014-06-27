@@ -12,14 +12,15 @@
 
 #import "HSEventSingleViewController.h"
 
-#define PADDING_BOTTOM  20
-#define DELAY_ANIMATION 0.4f
+#define PADDING_BOTTOM          20
+#define DELAY_ANIMATION         0.4f
 
-#define V_HEIGHT        339 //411
-#define ELASTIC_HEIGHT  0
-#define DATES_HEIGHT    209
-#define BOTTOM_Y        V_HEIGHT
-#define NEGATIVE_INDEX  190
+#define V_HEIGHT                339 //411
+#define ELASTIC_HEIGHT          0
+#define ELASTIC_SHOWN_HEIGHT    334
+#define DATES_HEIGHT            209
+#define BOTTOM_Y                V_HEIGHT
+#define NEGATIVE_INDEX          190
 
 #pragma mark - Typedef
 
@@ -59,6 +60,8 @@ HSEventInfoType;
     // ..
     contentOpen = kTypeNone;
     
+    contentView.imgCover.hidden = YES;
+    
     // event single views
     contentView = (HSEventSingleContentView *)[[HSMaster core] resourceAtIndex:kResourceEventSingleContent];
     footerView  = (HSEventSingleFooterView *)[[HSMaster core] resourceAtIndex:kResourceEventSingleFooter];
@@ -78,14 +81,15 @@ HSEventInfoType;
         [footerView.butPasses setAlpha:0.5];
     }
     
-    [contentView.imgCover setImage:[UIImage imageNamed:event.picture]];
+    [contentView.imgCover setImageWithURL:[NSURL URLWithString:event.pictureSingle]];
     [contentView.elasticView setBackgroundColor:[UIColor colorWithRed:35.0/255.0 green:34.0/255.0 blue:46.0/255.0 alpha:1]];
+    
+    [scroll addSubview:contentView];
+    [scroll addSubview:footerView];
     
     CGRect rect1        = footerView.frame;
     rect1.origin.y      = contentView.frame.size.height + contentView.frame.origin.y;
     [footerView setFrame:rect1];
-    
-    [scroll addSubview:footerView];
     
     // ..
     CGRect rect2        = contentView.elasticView.frame;
@@ -112,7 +116,7 @@ HSEventInfoType;
     [infoView setAlpha:0];
     
     // ..
-    [textView setText:event.description];
+    [textView setText:event.largeDescription];
     [infoView.labDates setText:event.datePretty];
     [infoView.labHours setText:event.hours];
     [infoView.labLocale setText:event.local];
@@ -126,7 +130,6 @@ HSEventInfoType;
     
     // ..
     [self updateRootScrollFrame];
-    [scroll addSubview:contentView];
     
     [[footerView.butAgenda titleLabel] setFont:[UIFont fontWithName:FONT_REGULAR size:17.0]];
     [[footerView.butPanelists titleLabel] setFont:[UIFont fontWithName:FONT_REGULAR size:17.0]];
@@ -181,13 +184,15 @@ HSEventInfoType;
 - (void) pressPasses:(UIButton *) sender
 {
     UIStoryboard *panelistSB = [UIStoryboard storyboardWithName:@"Pass" bundle:nil];
-    HSPanelistsViewController *vc = (HSPanelistsViewController *)[panelistSB instantiateInitialViewController];
-    [self presentViewController:vc animated:YES completion:nil];
+    UINavigationController *n = (UINavigationController *)[panelistSB instantiateInitialViewController];
+    HSPassesViewController *vc = (HSPassesViewController *)[[n viewControllers] objectAtIndex:0];
+    vc.event = event;
+    [self presentViewController:n animated:YES completion:nil];
 }
 
 #pragma mark - Private Methods
 
-- (void)updateRootScrollFrame
+- (void) updateRootScrollFrame
 {
     float bottomHeight = footerView.frame.size.height;
     [scroll setContentSize:CGSizeMake(contentView.frame.size.width, contentView.frame.size.height + bottomHeight)];
@@ -240,7 +245,8 @@ HSEventInfoType;
             [UIView animateWithDuration:DELAY_ANIMATION animations:^{
                 // content
                 CGRect rect1        = contentView.elasticView.frame;
-                rect1.size.height   = height + PADDING_BOTTOM;
+                rect1.origin.y      = ELASTIC_SHOWN_HEIGHT;
+                rect1.size.height   = height + PADDING_BOTTOM + ELASTIC_SHOWN_HEIGHT;
                 [contentView.elasticView setFrame:rect1];
                 // footer
                 CGRect rect2        = footerView.frame;

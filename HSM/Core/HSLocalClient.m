@@ -70,6 +70,8 @@
         object.hours = [dict objectForKey:@"hours"];
         object.dates = [HSEvent dateArrayFromRESTObject:[dict objectForKey:@"dates"]];
         object.datePretty = [dict objectForKey:@"date_pretty"];
+        object.pictureList = [[dict objectForKey:@"images"] objectForKey:@"list"];
+        object.pictureSingle = [[dict objectForKey:@"images"] objectForKey:@"single"];
         
         [newData addObject:object];
     }
@@ -132,7 +134,7 @@
     NSDate *today = [NSDate date];
     BOOL canAdd = NO;
     for (NSDate *date in event.dates) {
-        if ([today compare:date] == NSOrderedDescending){
+        if ([today compare:date] == NSOrderedAscending){
             canAdd = YES;
             break;
         }
@@ -310,25 +312,6 @@
         }
     }
     
-    MBProgressHUD *hud;
-    if ([localData count] == 0 && hudView)
-        hud = [MBProgressHUD showHUDAddedTo:hudView animated:YES];
-    
-    // update..
-    [[HSMaster rest] loadInBackground:YES];
-    [[HSMaster rest] panelistsForEvent:eventId completion:^(BOOL succeed, NSDictionary *result) {
-        if (succeed) {
-            if (result != nil) {
-                NSMutableDictionary *mdict = [[HSMaster tools] propertyListRead:HS_PLIST_PANELISTS];
-                NSString *key = [NSString stringWithFormat:@"panelist_%@", eventId];
-                [mdict setObject:[result objectForKey:@"data"] forKey:key];
-                [[HSMaster tools] propertyListWrite:mdict forFileName:HS_PLIST_PANELISTS];
-            }
-        }
-        if (hud)
-            [hud hide:YES];
-    }];
-    
     return newData;
 }
 
@@ -371,25 +354,6 @@
             [newData addObject:object];
         }
     }
-    
-    MBProgressHUD *hud;
-    if ([localData count] == 0 && hudView)
-        hud = [MBProgressHUD showHUDAddedTo:hudView animated:YES];
-    
-    // update..
-    [[HSMaster rest] loadInBackground:YES];
-    [[HSMaster rest] passesForEvent:eventId completion:^(BOOL succeed, NSDictionary *result) {
-        if (succeed) {
-            if (result != nil) {
-                NSMutableDictionary *mdict = [[HSMaster tools] propertyListRead:HS_PLIST_PASSES_MODEL];
-                NSString *key = [NSString stringWithFormat:@"passes_%@", eventId];
-                [mdict setObject:[result objectForKey:@"data"] forKey:key];
-                [[HSMaster tools] propertyListWrite:mdict forFileName:HS_PLIST_PASSES_MODEL];
-            }
-        }
-        if (hud)
-            [hud hide:YES];
-    }];
     
     return newData;
 }

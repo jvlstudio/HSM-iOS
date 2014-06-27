@@ -8,8 +8,8 @@
         <scene sceneID="iXI-bk-bC9">
             <objects>
                 <tableViewController storyboardIdentifier="passes" id="2Xw-XQ-L1N" customClass="HSPassesViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="163" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mwx-XH-qUu">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="163" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mwx-XH-qUu">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="hg1-j4-a5I">
@@ -31,20 +31,13 @@
                                 <rect key="frame" x="0.0" y="108" width="320" height="163"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eid-IO-kbV" id="jOw-yK-hXR">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="pass_gold.png" translatesAutoresizingMaskIntoConstraints="NO" id="IwF-u3-Wf7">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pep-W1-hQR">
-                                            <rect key="frame" x="7" y="8" width="307" height="147"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preço Normal: R$6.850" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESc-vL-0Iv">
                                             <rect key="frame" x="20" y="127" width="167" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,7 +82,7 @@
                                     <outlet property="labTitle" destination="p50-gg-518" id="BXo-Mb-KaJ"/>
                                     <outlet property="labValue" destination="ESc-vL-0Iv" id="JAa-pb-3A3"/>
                                     <outlet property="labValuePromo" destination="L3n-Hh-c8j" id="hkL-dE-IoJ"/>
-                                    <segue destination="OX5-Dq-UlH" kind="push" identifier="segue_form" id="cvo-gs-2tz"/>
+                                    <segue destination="OX5-Dq-UlH" kind="push" identifier="segue_form" id="VHd-GI-B0C"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -98,8 +91,13 @@
                             <outlet property="delegate" destination="2Xw-XQ-L1N" id="d9D-6q-c5B"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Passes" id="zrd-qq-i7u"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <navigationItem key="navigationItem" title="Passes" id="zrd-qq-i7u">
+                        <barButtonItem key="rightBarButtonItem" image="btbar_close.png" id="vTN-WY-LPz">
+                            <connections>
+                                <action selector="pressClose:" destination="2Xw-XQ-L1N" id="5bg-9U-yaq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pf-La-Hcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,10 +107,10 @@
         <scene sceneID="atJ-ZR-N7Y">
             <objects>
                 <tableViewController id="OX5-Dq-UlH" customClass="HSPassFormViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kxk-wH-1b3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kxk-wH-1b3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="W3c-EC-O87" customClass="HSPassHeaderView">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -154,12 +152,18 @@
                                 <action selector="pressBack:" destination="OX5-Dq-UlH" id="gyL-ne-0eF"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="btbar_close.png" id="Ii9-1i-vB8">
+                            <connections>
+                                <action selector="pressClose:" destination="OX5-Dq-UlH" id="X3B-Df-LiB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="butDone" destination="6fa-Cn-iEK" id="fz2-j2-SX4"/>
                         <outlet property="imgHeader" destination="UPM-tW-Y8J" id="KZc-fa-rM7"/>
                         <segue destination="EBM-hm-7jX" kind="push" identifier="segue_done" id="Wym-AP-zk1"/>
                         <segue destination="7U9-r6-PmR" kind="push" identifier="segue_add" id="eVs-04-MQ9"/>
+                        <segue destination="ISe-rY-i7v" kind="push" identifier="segue_choose" id="0sE-ue-ubl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7Q-WO-sCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -175,25 +179,25 @@
                         <viewControllerLayoutGuide type="bottom" id="Wuw-qy-scu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="umO-3c-ZxY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydD-35-6wy">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="passes_id_done.png" translatesAutoresizingMaskIntoConstraints="NO" id="vaN-zh-4Zi">
                                         <rect key="frame" x="107" y="31" width="106" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aguarde um de nossos consultores entrar em contato para confirmar os dados e finalizar a compra." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="253" translatesAutoresizingMaskIntoConstraints="NO" id="ggM-tH-XCY" customClass="KDLabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aguarde um de nossos consultores entrar em contato para confirmar os dados e finalizar a compra." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="253" translatesAutoresizingMaskIntoConstraints="NO" id="ggM-tH-XCY">
                                         <rect key="frame" x="34" y="283" width="253" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.50196078430000002" green="0.4941176471" blue="0.58039215690000001" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sua solicitação de compra de passe foi realizada com sucesso!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="253" translatesAutoresizingMaskIntoConstraints="NO" id="JE2-O0-7cD" customClass="KDLabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sua solicitação de compra de passe foi realizada com sucesso!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="253" translatesAutoresizingMaskIntoConstraints="NO" id="JE2-O0-7cD">
                                         <rect key="frame" x="34" y="205" width="253" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -207,8 +211,11 @@
                                         <state key="normal" title="Voltar para o Início" backgroundImage="bt_large_purple.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressButton:" destination="EBM-hm-7jX" eventType="touchUpInside" id="Fop-n7-kT8"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OBRIGADO!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-PX-LvY" customClass="KDLabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OBRIGADO!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-PX-LvY">
                                         <rect key="frame" x="20" y="166" width="280" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -221,25 +228,55 @@
                         <color key="backgroundColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Obrigado!" id="raS-zf-SWQ"/>
+                    <connections>
+                        <outlet property="button" destination="pIl-Ui-ilO" id="x4E-OH-nVa"/>
+                        <outlet property="contentView" destination="ydD-35-6wy" id="qx9-c4-vQ3"/>
+                        <outlet property="scroll" destination="ydD-35-6wy" id="hpj-d8-uim"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvu-uY-Yga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741" y="-194"/>
+            <point key="canvasLocation" x="1741" y="-287"/>
         </scene>
-        <!--View Controller-->
+        <!--Pass Form Options View Controller-->
+        <scene sceneID="DbX-Hr-BKm">
+            <objects>
+                <tableViewController id="ISe-rY-i7v" customClass="HSPassFormOptionsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="212-EA-9Zd">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="ISe-rY-i7v" id="Fx6-ya-Lmq"/>
+                            <outlet property="delegate" destination="ISe-rY-i7v" id="3QO-yi-en0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="CcY-dl-kMD">
+                        <barButtonItem key="leftBarButtonItem" image="btbar_back.png" id="gtP-iT-NV7">
+                            <connections>
+                                <action selector="pressBack:" destination="ISe-rY-i7v" id="fvM-Mg-Xeg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VLM-Xz-bNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2239" y="130"/>
+        </scene>
+        <!--Pass Form Add View Controller-->
         <scene sceneID="y2U-xM-k1Y">
             <objects>
-                <viewController id="7U9-r6-PmR" sceneMemberID="viewController">
+                <viewController id="7U9-r6-PmR" customClass="HSPassFormAddViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k7a-8V-fJ6"/>
                         <viewControllerLayoutGuide type="bottom" id="TJw-68-0Lo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iLm-9a-voN">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="guh-5e-GtA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HnL-FA-Jfr">
@@ -257,48 +294,71 @@
                                                 <state key="normal" title="Confirmar" backgroundImage="bt_large_green.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pressConfirm:" destination="7U9-r6-PmR" eventType="touchUpInside" id="25g-Mr-bLq"/>
+                                                </connections>
                                             </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dados do Participante" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hm-bI-a1F" customClass="KDLabel">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dados do Participante" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hm-bI-a1F">
                                                 <rect key="frame" x="20" y="20" width="280" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.50196078430000002" green="0.4941176471" blue="0.58039215690000001" alpha="1" colorSpace="deviceRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucm-3l-tu3" customClass="PassTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucm-3l-tu3">
                                                 <rect key="frame" x="60" y="67" width="240" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="textFieldDidEndOnExit:" destination="7U9-r6-PmR" eventType="editingDidEndOnExit" id="vXO-yW-2Rz"/>
+                                                    <outlet property="delegate" destination="7U9-r6-PmR" id="xhO-jJ-HRy"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kyw-rI-J2l" customClass="PassTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kyw-rI-J2l">
                                                 <rect key="frame" x="60" y="111" width="240" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="textFieldDidEndOnExit:" destination="7U9-r6-PmR" eventType="editingDidEndOnExit" id="jMY-tc-Koe"/>
+                                                    <outlet property="delegate" destination="7U9-r6-PmR" id="wea-8I-R3d"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CPF" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7OD-Ve-Abe" customClass="PassTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CPF" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7OD-Ve-Abe">
                                                 <rect key="frame" x="60" y="155" width="240" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="textFieldDidEndOnExit:" destination="7U9-r6-PmR" eventType="editingDidEndOnExit" id="HBH-Vr-LG7"/>
+                                                    <outlet property="delegate" destination="7U9-r6-PmR" id="bVS-oA-iPv"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Empresa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHP-nj-g6M" customClass="PassTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Empresa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHP-nj-g6M">
                                                 <rect key="frame" x="60" y="200" width="240" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="textFieldDidEndOnExit:" destination="7U9-r6-PmR" eventType="editingDidEndOnExit" id="y1n-oD-NdS"/>
+                                                    <outlet property="delegate" destination="7U9-r6-PmR" id="wUF-c1-XqI"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cargo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-oa-lnr" customClass="PassTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cargo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-oa-lnr">
                                                 <rect key="frame" x="60" y="244" width="240" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="textFieldDidEndOnExit:" destination="7U9-r6-PmR" eventType="editingDidEndOnExit" id="Kxq-Xv-pFw"/>
+                                                    <outlet property="delegate" destination="7U9-r6-PmR" id="6xS-2f-hja"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -309,11 +369,28 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1137254902" green="0.10980392160000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1Vh-uh-XQL"/>
+                    <navigationItem key="navigationItem" id="1Vh-uh-XQL">
+                        <barButtonItem key="leftBarButtonItem" image="btbar_back.png" id="jHm-GJ-vfr">
+                            <connections>
+                                <action selector="pressBack:" destination="7U9-r6-PmR" id="MN3-Uj-2Tb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="button" destination="orz-vL-xXU" id="Z1n-Q0-sKl"/>
+                        <outlet property="contentView" destination="HnL-FA-Jfr" id="f17-hm-jUm"/>
+                        <outlet property="labText" destination="0Hm-bI-a1F" id="m2r-OK-cnX"/>
+                        <outlet property="scroll" destination="guh-5e-GtA" id="mz0-Cn-fuv"/>
+                        <outlet property="tfCPF" destination="7OD-Ve-Abe" id="3Bw-Xd-ekq"/>
+                        <outlet property="tfCompany" destination="iHP-nj-g6M" id="OSJ-zV-wrU"/>
+                        <outlet property="tfEmail" destination="kyw-rI-J2l" id="s8d-Ca-KnN"/>
+                        <outlet property="tfName" destination="ucm-3l-tu3" id="6hL-Je-5vq"/>
+                        <outlet property="tfRole" destination="nPl-oa-lnr" id="W6a-tC-yMH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7I-JB-50H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741" y="559"/>
+            <point key="canvasLocation" x="1741" y="483"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y2o-oi-Iht">
@@ -337,6 +414,7 @@
         <image name="bt_large_green.png" width="298" height="42"/>
         <image name="bt_large_purple.png" width="291" height="45"/>
         <image name="btbar_back.png" width="25" height="25"/>
+        <image name="btbar_close.png" width="25" height="25"/>
         <image name="pass_gold.png" width="320" height="150"/>
         <image name="passes_field_form.png" width="320" height="264"/>
         <image name="passes_id_done.png" width="106" height="106"/>

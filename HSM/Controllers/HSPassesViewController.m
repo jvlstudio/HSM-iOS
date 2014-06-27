@@ -28,6 +28,13 @@
     rows = [[HSMaster local] passesForEvent:event.uniqueId];
 }
 
+#pragma mark - IBActions
+
+- (IBAction) pressClose:(UIBarButtonItem *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Table Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -46,9 +53,9 @@
     HSPass *pass = [rows objectAtIndex:indexPath.row];
     cell.labTitle.text          = pass.name;
     cell.labDescription.text    = pass.description;
-    cell.labValue.text          = pass.value;
+    cell.labValue.text          = [NSString stringWithFormat:@"Preço Normal: R$%@", pass.value];
     cell.labValuePromo.text     = pass.valuePromo;
-    cell.labValidto.text        = pass.validTo;
+    cell.labValidto.text        = [NSString stringWithFormat:@"Válido até: %@", pass.validTo];
     cell.imgBackground.image    = [UIImage imageNamed:[NSString stringWithFormat:@"pass_%@.png", [HS_PASS_COLORS objectAtIndex:pass.color]]];
     
     return cell;

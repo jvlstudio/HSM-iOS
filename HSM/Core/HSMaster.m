@@ -75,6 +75,15 @@
 		return network;
 	}
 }
++ (HSPassManager *) passes {
+	static HSPassManager* passes;
+	@synchronized(self){
+		if(!passes){
+			passes = [HSPassManager new];
+		}
+		return passes;
+	}
+}
 + (HSTools *) tools {
 	static HSTools* tools;
 	@synchronized(self){

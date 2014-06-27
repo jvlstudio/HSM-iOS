@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HSPass.h"
 
 @interface HSPassFormAddViewController : UIViewController
 <UITextFieldDelegate, UIScrollViewDelegate>
 {
+    HSPass *pass;
     NSIndexPath *indexPath;
     
-    IBOutlet UIScrollView *scr;
-    IBOutlet UIView *v;
+    IBOutlet UIScrollView *scroll;
+    IBOutlet UIView *contentView;
     
     IBOutlet UILabel *labText;
     IBOutlet UITextField *tfName;
@@ -22,13 +24,16 @@
     IBOutlet UITextField *tfCPF;
     IBOutlet UITextField *tfCompany;
     IBOutlet UITextField *tfRole;
-    IBOutlet UIButton *but;
+    IBOutlet UIButton *button;
 }
 
+@property (nonatomic, strong) HSPass *pass;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 
 #pragma mark - IBActions
 
-- (IBAction) pressConfirm:(id)sender;
+- (IBAction) pressConfirm:(UIButton *)sender;
+- (IBAction) pressBack:(UIBarButtonItem *)sender;
+- (IBAction) textFieldDidEndOnExit:(UITextField *) sender;
 
 @end

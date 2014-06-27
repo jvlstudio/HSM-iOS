@@ -16,4 +16,8 @@
 
 @property (nonatomic, strong) HSEvent *event;
 
+#pragma mark - IBActions
+
+- (IBAction) pressClose:(UIBarButtonItem *)sender;
+
 @end

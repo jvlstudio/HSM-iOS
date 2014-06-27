@@ -19,7 +19,8 @@
     NSArray *dates; // array of NSDate
     NSString *datePretty;
     NSString *hours;
-    NSString *picture;
+    NSString *pictureList;
+    NSString *pictureSingle;
 }
 
 @property (nonatomic, strong) NSString *uniqueId;
@@ -31,7 +32,8 @@
 @property (nonatomic, strong) NSArray *dates;
 @property (nonatomic, strong) NSString *datePretty;
 @property (nonatomic, strong) NSString *hours;
-@property (nonatomic, strong) NSString *picture;
+@property (nonatomic, strong) NSString *pictureList;
+@property (nonatomic, strong) NSString *pictureSingle;
 
 #pragma mark - Methods
 

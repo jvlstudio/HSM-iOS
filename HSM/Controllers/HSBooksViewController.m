@@ -56,13 +56,6 @@
     }
 }
 
-#pragma mark - Methods
-
-- (HSBook *) book
-{
-    return selectedBook;
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -86,11 +79,6 @@
     [cell.imgPicture setImage:[UIImage imageNamed:@""]];
     
     return cell;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    selectedBook = (HSBook *)[rows objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"segue_single" sender:self];
 }
 
 #pragma mark - Navigation

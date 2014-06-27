@@ -67,6 +67,8 @@
 
 // passes
 
+#define KEY_PLACEHOLDER             @"_placeholderLabel.textColor"
+
 #define KEY_FORM_DATE               @"formDate"
 #define KEY_FORM_PARTICIPANT        @"formParticipant"
 #define KEY_FORM_PAYMENT            @"formPayment"

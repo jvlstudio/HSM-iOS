@@ -16,7 +16,7 @@
 @synthesize local;
 @synthesize dates, hours;
 @synthesize datePretty;
-@synthesize picture;
+@synthesize pictureList, pictureSingle;
 
 #pragma mark - Methods
 

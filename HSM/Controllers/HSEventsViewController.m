@@ -98,8 +98,7 @@
     [cell.labLocal setFont:[UIFont fontWithName:FONT_REGULAR size:cell.labLocal.font.pointSize]];
     [cell.labDates setFont:[UIFont fontWithName:FONT_REGULAR size:cell.labDates.font.pointSize]];
     
-    NSString *strImg    = [NSString stringWithFormat:@"events_list_%@.png", event.slug];
-    [cell.imgBackground setImage:[UIImage imageNamed:strImg]];
+    [cell.imgBackground setImageWithURL:[NSURL URLWithString:event.pictureList]];
     
     return cell;
 }
